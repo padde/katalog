@@ -1,4 +1,4 @@
-<h1>Editing person</h1>
+<h1>Edit person</h1>
 
 <% form_for(@person) do |f| %>
   <%= f.error_messages %>
@@ -20,5 +20,6 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @person %> |
-<%= link_to 'Back', people_path %>
+<div id="controls">
+	<%= link_to 'Show', @person %>
+</div>

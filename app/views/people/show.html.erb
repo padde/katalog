@@ -1,18 +1,24 @@
+<h1>
+  <%=h @person.full_name %>
+</h1>
+
 <p>
-  <b>First name:</b>
-  <%=h @person.first_name %>
+	<h2>Motto</h2>
+	<i><%=h @person.motto %></i>
 </p>
 
 <p>
-  <b>Last name:</b>
-  <%=h @person.last_name %>
+	<h2>Memberships</h2>
 </p>
 
 <p>
-  <b>Motto:</b>
-  <%=h @person.motto %>
+	<h2>Items</h2>
 </p>
 
+<p>
+	<h2>Users</h2>
+</p>
 
-<%= link_to 'Edit', edit_person_path(@person) %> |
-<%= link_to 'Back', people_path %>
+<div id="controls">
+	<%= link_to 'Edit', edit_person_path(@person) %>
+</div>

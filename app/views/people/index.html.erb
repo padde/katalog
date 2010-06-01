@@ -1,24 +1,14 @@
-<h1>Listing people</h1>
-
-<table>
-  <tr>
-    <th>First name</th>
-    <th>Last name</th>
-    <th>Motto</th>
-  </tr>
+<h1>People</h1>
 
 <% @people.each do |person| %>
-  <tr>
-    <td><%=h person.first_name %></td>
-    <td><%=h person.last_name %></td>
-    <td><%=h person.motto %></td>
-    <td><%= link_to 'Show', person %></td>
-    <td><%= link_to 'Edit', edit_person_path(person) %></td>
-    <td><%= link_to 'Destroy', person, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<p>
+	<%= link_to person.full_name, person %><br />
+	<i><%=h person.motto %></i>
+</p>
 <% end %>
-</table>
 
 <br />
 
-<%= link_to 'New person', new_person_path %>
+<div id="controls">
+	<%= link_to 'New person', new_person_path %>
+</div>

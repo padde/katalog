@@ -18,6 +18,7 @@ h1 {
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
 	border: 1px solid #ccc;
+	overflow:hidden;
 }	
 
 #logo {

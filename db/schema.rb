@@ -9,14 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100601155927) do
+ActiveRecord::Schema.define(:version => 20100601161808) do
 
   create_table "credits", :force => true do |t|
-    t.integer  "user_id"
     t.integer  "item_id"
     t.string   "role"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "person_id"
   end
 
   create_table "groups", :force => true do |t|
@@ -34,11 +34,11 @@ ActiveRecord::Schema.define(:version => 20100601155927) do
   end
 
   create_table "memberships", :force => true do |t|
-    t.integer  "user_id"
     t.integer  "group_id"
     t.string   "role"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "person_id"
   end
 
   create_table "people", :force => true do |t|
