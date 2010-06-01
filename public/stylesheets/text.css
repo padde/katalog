@@ -8,10 +8,11 @@ body {
 h1 {
 	font-size: 30px;
 	margin-bottom: 0.6em;
+	text-shadow: 3px 2px 0 rgba(0,0,0,0.2);
 }
 
 #wrap {
-	margin-top: 30px;
+	margin: 30px auto;
 	background: #eee;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -24,6 +25,7 @@ h1 {
 	margin: 0;
 	padding: 20px;
 	width: 920px;
+	text-shadow: 3px 2px 0 rgba(0,0,0,0.2);
 }
 
 #logo a {
@@ -62,14 +64,32 @@ h1 {
 
 #flash_notice {
 	margin: 0;
-	padding: 10px 22px;
+	padding: 10px 42px;
+	width: 876px;
 	background: #9c6;
 }
 
 #content {
-	padding: 30px;
+	padding:  30px 30px 40px 30px;
 	width: 880px;
 	line-height: 1.5em;
+}
+
+input, textarea {
+	font-size: 14px;
+}
+
+input {
+	width: 296px;
+}
+
+input[type=submit] {
+	width: 100px;
+}
+
+textarea {
+	width: 500px;
+	height: 200px;
 }
 
 #controls {
