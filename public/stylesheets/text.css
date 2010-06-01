@@ -6,44 +6,28 @@ body {
 }
 
 h1 {
-	font-size: 40px;
+	font-size: 30px;
 	margin-bottom: 0.6em;
 }
 
 #wrap {
 	margin-top: 30px;
 	background: #eee;
-	
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	
-	-moz-box-shadow: 1px 1px 10px #aaa;
-	-webkit-box-shadow: 1px 1px 10px #aaa;
-	box-shadow: 1px 1px 10px #aaa;
-	
-/*	border: 1px solid #888;*/
-	
-	overflow:hidden;
-	
-	z-index: 0;
+	border: 1px solid #ccc;
 }	
 
 #logo {
-	font-size: 60px;
-	font-weight: bold;
-/*	text-shadow: 5px 0 0 rgba(0,0,0,0.3);*/
 	background: #0ac;
-	color: #fff;
 	margin: 0;
 	padding: 20px;
 	width: 920px;
-	
-	z-index: 1;
 }
 
 #logo a {
-	font-size: 60px;
+	font-size: 40px;
 	font-weight: bold;
 	color: #fff;
 	text-decoration:none;
@@ -52,15 +36,9 @@ h1 {
 #menu {
 	margin: 0;
 	padding: 0 42px;
-	width: 920px;
+	width: 876px;
 	background: #eee;
 	border-bottom: 1px solid #ccc;
-	
-	z-index: 50;
-	
-	-moz-box-shadow: 1px 1px 10px #aaa;
-	-webkit-box-shadow: 1px 1px 20px rgba(0,0,0,0.2);
-	box-shadow: 1px 1px 10px #aaa;
 }
 
 #menu a {
@@ -70,7 +48,6 @@ h1 {
 	background: #fff;
 	float:left ;
 	border-right: 1px solid #ccc;
-	
 }
 
 #menu a:first-child {
@@ -95,11 +72,11 @@ h1 {
 	line-height: 1.5em;
 }
 
-.controls {
-	text-align: right;
+#controls {
+	text-align:right;
 }
 
-.controls a {
+#controls a {
 	color: #0ac;
 	text-decoration: none;
 	padding: 10px;
@@ -110,7 +87,8 @@ h1 {
 	border-radius: 5px;
 	border: 1px solid #ccc;
 }
-.controls a:hover {
+
+#controls a:hover {
 	color: #fff;
 	text-decoration: underline;
 	background: #222;
