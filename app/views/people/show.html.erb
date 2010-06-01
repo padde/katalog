@@ -21,4 +21,5 @@
 
 <div id="controls">
 	<%= link_to 'Edit', edit_person_path(@person) %>
+	<%= link_to 'Delete', @person, :confirm => 'Are you sure?', :method => :delete %>
 </div>

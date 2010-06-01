@@ -17,5 +17,5 @@
 
 <div id="controls">
 	<%= link_to 'Edit', edit_user_path(@user) %>
-	<%= link_to 'Show all', users_path %>
+	<%= link_to 'Delete', @user, :confirm => 'Are you sure?', :method => :delete %>
 </div>
