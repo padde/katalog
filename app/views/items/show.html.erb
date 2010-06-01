@@ -1,13 +1,11 @@
-<p>
-  <b>Title:</b>
-  <%=h @item.title %>
-</p>
+<h1>
+  [I] <%=h @item.title %>
+</h1>
 
 <p>
-  <b>Description:</b>
   <%=h @item.description %>
 </p>
 
-
-<%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<div class="controls">
+	<%= link_to 'Edit', edit_item_path(@item) %><%= link_to 'Show all', items_path %>
+</div>

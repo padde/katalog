@@ -5,13 +5,36 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Groups: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'reset', '960', 'text' %>
 </head>
 <body>
-
-<p style="color: green"><%= notice %></p>
-
-<%= yield %>
+	
+<div class="container_12" id="wrap">
+	<div class="grid_12" id="logo">
+		<%= link_to 'bau-ha.us/katalog', root_path %>
+	</div>
+	<div class="clear"></div>
+	
+	<div class="grid_12" id="menu">
+		<%#= link_to 'Home', root_path %>
+		<%= link_to 'Items', items_path %>
+		<%= link_to 'Groups', groups_path %>
+		<%= link_to 'Users', users_path %>
+	</div>
+	<div class="clear"></div>
+	
+	<% if flash[:notice] -%>
+		<div class="grid_12" id="flash_notice">
+			<%= notice %>
+		</div>
+		<div class="clear"></div>
+	<% end -%>
+	
+	<div class="grid_12" id="content">
+		<%= yield %>
+	</div>
+	<div class="clear"></div>
+</div>
 
 </body>
 </html>

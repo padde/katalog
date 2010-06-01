@@ -1,4 +1,4 @@
-<h1>Editing group</h1>
+<h1>Edit group</h1>
 
 <% form_for(@group) do |f| %>
   <%= f.error_messages %>
@@ -16,5 +16,7 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @group %> |
-<%= link_to 'Back', groups_path %>
+<div class="controls">
+	<%= link_to 'Show', @group %>
+	<%= link_to 'Back', groups_path %>
+</div>

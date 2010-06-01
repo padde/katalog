@@ -1,13 +1,12 @@
-<p>
-  <b>Name:</b>
-  <%=h @group.name %>
-</p>
+<h1>
+  [G] <%=h @group.name %>
+</h1>
 
 <p>
-  <b>Description:</b>
   <%=h @group.description %>
 </p>
 
-
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<div class="controls">
+	<%= link_to 'Edit', edit_group_path(@group) %>
+	<%= link_to 'Back', groups_path %>
+</div>
