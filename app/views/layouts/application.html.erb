@@ -10,6 +10,18 @@
 <body>
 	
 <div class="container_12" id="wrap">
+	
+	<div class="grid_12" id="user">
+		<% if user_signed_in? -%>
+			Hello, <%= current_user.email %>!
+			Not You? <%= link_to 'Log out', destroy_user_session_path %> 
+		<% else -%>
+			<%= link_to 'Log in', new_user_session_path %> or
+			<%= link_to 'register', new_user_registration_path %> 
+		<% end -%>
+	</div>
+	<div class="clear"></div>
+	
 	<div class="grid_12" id="logo">
 		<%= link_to 'bau-ha.us/katalog', root_path %>
 	</div>
@@ -23,10 +35,8 @@
 	</div>
 	<div class="clear"></div>
 	
-	<% if flash[:notice] -%>
-		<div class="grid_12" id="flash_notice">
-			<%= notice %>
-		</div>
+	<% flash.each do |name, msg| -%>
+		<%= content_tag :div, msg, :class => "grid_12", :id => "flash_#{name}" %>
 		<div class="clear"></div>
 	<% end -%>
 	

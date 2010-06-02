@@ -1,5 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :people, :groups, :items, :users
+  map.devise_for :users
+
+  map.resources :people
+  map.resources :groups
+  map.resources :items
+  map.resources :users
+  
   map.root :controller => 'items'
   
   map.connect ':controller/:action/:id'

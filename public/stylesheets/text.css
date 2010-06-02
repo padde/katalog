@@ -20,10 +20,19 @@ h1 {
 	overflow:hidden;
 }	
 
+#user {
+	background: #0ac;
+	margin: 0;
+	padding: 10px;
+	width: 940px;
+	text-align: right;
+	font-size: 12px;
+}
+
 #logo {
 	background: #0ac;
 	margin: 0;
-	padding: 20px;
+	padding: 0 20px 20px 20px;
 	width: 920px;
 	text-shadow: 3px 2px 0 rgba(0,0,0,0.2);
 }
@@ -63,10 +72,16 @@ h1 {
 }
 
 #flash_notice {
-	margin: 0;
+	margin: 10px;
 	padding: 10px 42px;
-	width: 876px;
+	width: 856px;
 	background: #9c6;
+	
+	-webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+	-moz-box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+	
+	border: 1px solid #4A992A;
 }
 
 #content {
@@ -83,8 +98,8 @@ input {
 	width: 296px;
 }
 
-input[type=submit] {
-	width: 100px;
+input[type=submit], input[type=checkbox] {
+	width: auto;
 	margin-top: 20px;
 }
 
