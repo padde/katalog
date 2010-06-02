@@ -85,11 +85,16 @@ input {
 
 input[type=submit] {
 	width: 100px;
+	margin-top: 20px;
 }
 
 textarea {
 	width: 500px;
 	height: 200px;
+}
+
+table tr td {
+	padding: 0 10px 10px 0;
 }
 
 #controls {
