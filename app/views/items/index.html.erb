@@ -4,7 +4,8 @@
 	<%= link_to item.title, item %><br />
 <% end %>
 
-<br />
+<% if user_signed_in? -%>
 <div id="controls">
 	<%= link_to 'New item', new_item_path %>
 </div>
+<% end -%>

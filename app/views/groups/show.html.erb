@@ -11,7 +11,9 @@
 	<h2>Members</h2>
 </p>
 
+<% if user_signed_in? -%>
 <div id="controls">
 	<%= link_to 'Edit', edit_group_path(@group) %>
 	<%= link_to 'Delete', @group, :confirm => 'Are you sure?', :method => :delete %>
 </div>
+<% end -%>

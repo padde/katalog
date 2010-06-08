@@ -6,6 +6,8 @@
 
 <br />
 
+<% if user_signed_in? -%>
 <div id="controls">
 	<%= link_to 'New group', new_group_path %>
 </div>
+<% end -%>
