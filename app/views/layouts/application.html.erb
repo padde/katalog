@@ -13,7 +13,7 @@
 	
 	<div class="grid_12" id="user">
 		<% if user_signed_in? -%>
-			Hello, <%= current_user.email %>!
+			Hello, <%= current_user.username %>!
 			Not You? <%= link_to 'Log out', destroy_user_session_path %> 
 		<% else -%>
 			<%= link_to 'Log in', new_user_session_path %> or
