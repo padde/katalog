@@ -1,8 +1,8 @@
-class ItemsController < ApplicationController
+class ThingsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
   
   def index
-    @items = Item.all
+    @things = Thing.all
 
     respond_to do |format|
       format.html
@@ -10,7 +10,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+    @thing = Thing.find(params[:id])
 
     respond_to do |format|
       format.html
@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
+    @thing = Thing.new
 
     respond_to do |format|
       format.html
@@ -26,15 +26,15 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
+    @thing = Thing.find(params[:id])
   end
 
   def create
-    @item = Item.new(params[:item])
+    @thing = Thing.new(params[:thing])
 
     respond_to do |format|
-      if @item.save
-        format.html { redirect_to(@item, :notice => 'Item was successfully created.') }
+      if @thing.save
+        format.html { redirect_to(@thing, :notice => 'Thing was successfully created.') }
       else
         format.html { render :action => "new" }
       end
@@ -42,11 +42,11 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item = Item.find(params[:id])
+    @thing = Thing.find(params[:id])
 
     respond_to do |format|
-      if @item.update_attributes(params[:item])
-        format.html { redirect_to(@item, :notice => 'Item was successfully updated.') }
+      if @thing.update_attributes(params[:thing])
+        format.html { redirect_to(@thing, :notice => 'Thing was successfully updated.') }
       else
         format.html { render :action => "edit" }
       end
@@ -54,11 +54,11 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
-    @item.destroy
+    @thing = Thing.find(params[:id])
+    @thing.destroy
 
     respond_to do |format|
-      format.html { redirect_to(items_url) }
+      format.html { redirect_to(things_url) }
     end
   end
 end

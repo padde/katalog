@@ -2,10 +2,10 @@
 
 one:
   user_id: 1
-  item_id: 1
+  thing_id: 1
   role: MyString
 
 two:
   user_id: 1
-  item_id: 1
+  thing_id: 1
   role: MyString

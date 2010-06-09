@@ -1,0 +1,19 @@
+<h1>
+  [T] <%=h @thing.title %>
+</h1>
+
+<p>
+	<h2>Description</h2>
+	<%=simple_format @thing.description %>
+</p>
+
+<p>
+	<h2>Credits</h2>
+</p>
+
+<% if user_signed_in? -%>
+<div id="controls">
+	<%= link_to 'Edit', edit_thing_path(@thing) %>
+	<%= link_to 'Delete', @thing, :confirm => 'Are you sure?', :method => :delete %>
+</div>
+<% end -%>

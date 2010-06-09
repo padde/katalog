@@ -1,0 +1,11 @@
+<h1>Things</h1>
+
+<% @things.each do |thing| %>
+	<%= link_to thing.title, thing %><br />
+<% end %>
+
+<% if user_signed_in? -%>
+<div id="controls">
+	<%= link_to 'New thing', new_thing_path %>
+</div>
+<% end -%>
