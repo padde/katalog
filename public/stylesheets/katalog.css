@@ -1,0 +1,5 @@
+body, input, textarea {
+	font-size: 100%;
+	font-family: Vollkorn;
+}
+@import url(http://fonts.googleapis.com/css?family=Vollkorn:regular,bold);
