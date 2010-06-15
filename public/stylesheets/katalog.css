@@ -1,11 +1,25 @@
 @import url(http://fonts.googleapis.com/css?family=Vollkorn:regular,bold);
+@import url(http://fonts.googleapis.com/css?family=Inconsolata);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold);
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:regular,italic,bold,bolditalic);
+
 
 body, input, textarea {
 	font-size: 100%;
 	font-family: Vollkorn;
-	color: #222;
+	color: #333;
+	background-color: #eee;
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
 }
 
+a, a:active, a:hover, a:visited {
+	text-decoration: none;
+	color: black;
+}
+a:active, a:hover {
+	background-color: #dfdfdf;
+	text-decoration: underline;
+}
 
 h1 {
 	font-size: 30px;
@@ -18,16 +32,15 @@ p {
 
 #wrap {
 	margin: 30px auto;
-	background: #eee;
+	background: #fff;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	border: 1px solid #888;
 	overflow:hidden;
 }	
 
 #user {
-	background: #0ac;
+	background: #fff;
 	margin: 0;
 	padding: 10px;
 	width: 940px;
@@ -36,17 +49,17 @@ p {
 }
 
 #logo {
-	background: #0ac;
+	background: #fff;
 	margin: 0;
 	padding: 0 20px 20px 20px;
 	width: 920px;
-	text-shadow: 3px 2px 0 rgba(0,0,0,0.2);
+	text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 #logo a {
 	font-size: 40px;
 	font-weight: bold;
-	color: #fff;
+	color: #222;
 	text-decoration:none;
 }
 
@@ -54,28 +67,24 @@ p {
 	margin: 0;
 	padding: 0;
 	width: 960px;
-	background: #ccc;
-	border-bottom: 1px solid #888;
-	border-top: 1px solid #888;
+	background: #eee;
 }
 
 #menu a {
 	color: #222;
 	text-decoration: none;
 	padding: 10px 20px;
-	/*	background: #fff;*/
 	float:left ;
-	border-right: 1px solid #888;
-}
-
-#menu a:first-child {
-/*	border-left: 1px solid #ccc;*/
 }
 
 #menu a:hover {
-	color: #fff;
+	background: #fff;
+	color: #333;
 	text-decoration: underline;
-	background: #222;
+}
+
+#menu a .current {
+	background: #fff;
 }
 
 #flash_notice, #flash_alert, .errorExplanation {
