@@ -1,5 +1,153 @@
+@import url(http://fonts.googleapis.com/css?family=Vollkorn:regular,bold);
+
 body, input, textarea {
 	font-size: 100%;
 	font-family: Vollkorn;
+	color: #222;
 }
-@import url(http://fonts.googleapis.com/css?family=Vollkorn:regular,bold);
+
+
+h1 {
+	font-size: 30px;
+	margin-bottom: 0.6em;
+}
+
+p {
+	margin-bottom: 1em;
+}
+
+#wrap {
+	margin: 30px auto;
+	background: #eee;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #888;
+	overflow:hidden;
+}	
+
+#user {
+	background: #0ac;
+	margin: 0;
+	padding: 10px;
+	width: 940px;
+	text-align: right;
+	font-size: 12px;
+}
+
+#logo {
+	background: #0ac;
+	margin: 0;
+	padding: 0 20px 20px 20px;
+	width: 920px;
+	text-shadow: 3px 2px 0 rgba(0,0,0,0.2);
+}
+
+#logo a {
+	font-size: 40px;
+	font-weight: bold;
+	color: #fff;
+	text-decoration:none;
+}
+
+#menu {
+	margin: 0;
+	padding: 0;
+	width: 960px;
+	background: #ccc;
+	border-bottom: 1px solid #888;
+	border-top: 1px solid #888;
+}
+
+#menu a {
+	color: #222;
+	text-decoration: none;
+	padding: 10px 20px;
+	/*	background: #fff;*/
+	float:left ;
+	border-right: 1px solid #888;
+}
+
+#menu a:first-child {
+/*	border-left: 1px solid #ccc;*/
+}
+
+#menu a:hover {
+	color: #fff;
+	text-decoration: underline;
+	background: #222;
+}
+
+#flash_notice, #flash_alert, .errorExplanation {
+	margin: 10px;
+	padding: 10px;
+	width: 920px;
+	-webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+	-moz-box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+#flash_notice {
+	background: #9c6;
+	border: 1px solid #4A992A;
+}
+
+#flash_alert, .errorExplanation {
+	background: #F2998B;
+	border: 1px solid #DA2900;
+}
+
+.fieldWithErrors input {
+	border: 2px solid #DA2900;
+}
+
+#content {
+	padding:  30px 30px 40px 30px;
+	width: 880px;
+	line-height: 1.5em;
+}
+
+input, textarea {
+	font-size: 14px;
+}
+
+input {
+	width: 296px;
+}
+
+input[type=submit], input[type=checkbox] {
+	width: auto;
+	margin-top: 20px;
+}
+
+textarea {
+	width: 500px;
+	height: 200px;
+}
+
+table tr td {
+	padding: 0 10px 10px 0;
+}
+
+#controls {
+	text-align:right;
+}
+
+#controls a {
+	color: #333;
+	text-decoration: none;
+	padding: 10px;
+	background: #fff;
+	margin-left: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #888;
+}
+
+#controls a:hover {
+	color: #fff;
+	text-decoration: underline;
+	background: #222;
+	border: 1px solid #222;
+}
