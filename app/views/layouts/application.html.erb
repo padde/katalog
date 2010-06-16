@@ -1,51 +1,88 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>bau-ha.us | <%= controller.controller_name %> </title>
-  <%= stylesheet_link_tag 'reset', '960', 'text' %>
+  <%= stylesheet_link_tag 'reset', '960', 'text', 'katalog' %>
   <%= javascript_include_tag :defaults, :cache => true %>
 </head>
-<body>
-	
-<div class="container_12" id="wrap">
-	
-	<div class="grid_12" id="user">
-		<% if user_signed_in? -%>
-			Hello, <%= current_user.username %>!
-			Not You? <%= link_to 'Log out', destroy_user_session_path %><br />
-			<%= link_to 'Edit account', edit_registration_path(current_user) %>
-		<% else -%>
-			<%= link_to 'Log in', new_user_session_path %> or
-			<%= link_to 'register', new_user_registration_path %> 
-		<% end -%>
-	</div>
-	<div class="clear"></div>
-	
-	<div class="grid_12" id="logo">
-		<%= link_to 'bau-ha.us/katalog', root_path %>
-	</div>
-	<div class="clear"></div>
-	
-	<div class="grid_12" id="menu">
-		<%#= link_to 'Home', root_path %>
-		<%= link_to 'Things', things_path %>
-		<%= link_to 'People', people_path %>
-	</div>
-	<div class="clear"></div>
-	
-	<% flash.each do |name, msg| -%>
-		<%= content_tag :div, msg, :class => "grid_12", :id => "flash_#{name}" %>
-		<div class="clear"></div>
-	<% end -%>
-	
-	<div class="grid_12" id="content">
-		<%= yield %>
-	</div>
-	<div class="clear"></div>
-</div>
 
+<body>
+	<div id="wrapper" class="hfeed container_16">
+		<div id="header" class="grid_16">
+			<div id="masthead">
+				<div id="branding" role="banner" class="grid_3 alpha">
+					<h1 id="site-title">
+						<%= link_to 'Katalog', root_path %>
+					</h1>
+					</div><!-- #branding -->
+
+					<div id="access" role="navigation" class="grid_13 omega">
+						<div class="menu grid_9 alpha">
+								<li class="menu-item current-page-item">
+								<%= link_to 'Things', things_path %>
+								</li>
+								<li class="menu-item menu-item-current">
+								<%= link_to 'People', people_path %>
+								</li>
+								<li class="menu-item">
+								<%= link_to 'Groups', groups_path %>
+								</li>
+							</ul>
+						</div>
+						<div class="user grid_4 alpha">
+						<span>
+							<% if user_signed_in? -%>
+								<span>Hello, <span class="username"><%= current_user.username %>!</span></span>
+								<span><%= link_to 'Not You?', destroy_user_session_path %></span> 
+							<% else -%>
+								<span><%= link_to 'Log in', new_user_session_path %> or</span>
+								<span><%= link_to 'Register', new_user_registration_path %> </span>
+						</span>
+							<% end -%>
+						</div>
+					</div><!-- #access -->
+				</div><!-- #masthead -->
+			</div><!-- #header -->
+
+			<div id="main" class="grid_12">
+				<div id="container" class="grid_12 alpha">
+					<div id="content" role="main">
+									
+					<% flash.each do |name, msg| -%>
+						<%= content_tag :div, msg, :class => "grid_12", :id => "flash_#{name}" %>
+						<div class="clear"></div>
+					<% end -%>
+					
+					<div class="entry-content">
+						<%= yield %>
+					</div>
+					<div class="clear"></div>
+					</div><!-- #content -->
+				</div><!-- #container -->
+			</div><!-- #main -->
+			<div id="side" class="grid_4 alpha">
+		    	<ul>Study
+		            <li><a href="index.html">Wechselstrom</a></li>
+		        	<li><a href="index.html">K3 — wenn Künstler Kunst…</a></li>
+		            <li><a href="index.html">Stoptrick</a></li>
+		            <li><a href="index.html">(3 weitere…)</a></li>
+		        </ul>
+		        <ul>Groups
+		        	<li><a href="index.html">ColorViolence.net</a></li>
+		            <li><a href="index.html">marke.6</a></li>
+		            <li><a href="index.html">ktw</a></li>
+		        </ul>
+		        <ul>Shop
+		        	<li><a href="index.html">5 Gemälde</a></li>
+		            <li><a href="index.html">1 Fotos</a></li>
+		            <li><a href="index.html">26 Poster</a></li>
+		            <li><a href="index.html">(276 weitere…)</a></li>
+		        </ul>
+			</div><!-- #side -->
+		</div><!-- #wrapper -->
+						
 </body>
 </html>
