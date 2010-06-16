@@ -21,14 +21,11 @@
 
 					<div id="access" role="navigation" class="grid_13 omega">
 						<div class="menu grid_9 alpha">
-								<li class="menu-item current-page-item">
-								<%= link_to 'Things', things_path %>
+								<li class="menu-item <%= 'menu-item-current' if @controller.controller_name == 'things' %>">
+									<%= link_to 'Things', things_path %>
 								</li>
-								<li class="menu-item menu-item-current">
-								<%= link_to 'People', people_path %>
-								</li>
-								<li class="menu-item">
-								<%= link_to 'Groups', groups_path %>
+								<li class="menu-item <%= 'menu-item-current' if @controller.controller_name == 'people' %>">
+									<%= link_to 'People', people_path %>
 								</li>
 							</ul>
 						</div>
