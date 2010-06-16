@@ -137,6 +137,10 @@ p {
 	border: 1px solid #DA2900;
 }
 
+.fieldWithErrors {
+	display: inline;
+}
+
 .fieldWithErrors input {
 	border: 2px solid #DA2900;
 }

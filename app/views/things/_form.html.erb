@@ -9,10 +9,12 @@
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </p>
+  
   <% f.fields_for :credits do |builder| -%>
     <%= render 'credit_fields', :f => builder %>
   <% end -%>
   <p><%= link_to_add_fields 'add credit', f, :credits %></p>
+  
   <p>
     <%= f.submit submit %>
   </p>
