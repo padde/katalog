@@ -1,10 +1,7 @@
 <h1>People</h1>
 
 <% @people.each do |person| %>
-<p>
 	<%= link_to person.full_name, person %><br />
-	<i><%=h person.motto %></i>
-</p>
 <% end %>
 
 <% if user_signed_in? -%>

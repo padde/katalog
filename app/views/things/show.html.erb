@@ -1,14 +1,16 @@
 <h1>
-  [T] <%=h @thing.title %>
+  <%=h @thing.title %>
 </h1>
 
 <p>
-	<h2>Description</h2>
 	<%=simple_format @thing.description %>
 </p>
 
 <p>
 	<h2>Credits</h2>
+	<% @thing.credits.each do |credit| %>
+		<%= credit.role.capitalize %> — <%= link_to credit.person.full_name, person_path(credit.person) unless credit.person_id.nil?%><br />
+	<% end %>
 </p>
 
 <% if user_signed_in? -%>

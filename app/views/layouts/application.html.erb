@@ -3,9 +3,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-
-	<title>/Katalog [<%= RAILS_ENV %>] | <%= controller.controller_name %> | <%= controller.action_name %></title><%= stylesheet_link_tag 'reset', '960', 'text', 'katalog' %>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>bau-ha.us | <%= controller.controller_name %> </title>
+  <%= stylesheet_link_tag 'reset', '960', 'text', 'katalog' %>
+  <%= javascript_include_tag :defaults, :cache => true %>
 </head>
 
 <body>
@@ -20,14 +21,11 @@
 
 					<div id="access" role="navigation" class="grid_13 omega">
 						<div class="menu grid_9 alpha">
-								<li class="menu-item current-page-item">
-								<%= link_to 'Things', things_path %>
+								<li class="menu-item <%= 'menu-item-current' if @controller.controller_name == 'things' %>">
+									<%= link_to 'Things', things_path %>
 								</li>
-								<li class="menu-item menu-item-current">
-								<%= link_to 'People', people_path %>
-								</li>
-								<li class="menu-item">
-								<%= link_to 'Groups', groups_path %>
+								<li class="menu-item <%= 'menu-item-current' if @controller.controller_name == 'people' %>">
+									<%= link_to 'People', people_path %>
 								</li>
 							</ul>
 						</div>

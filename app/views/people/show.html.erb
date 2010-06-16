@@ -3,20 +3,14 @@
 </h1>
 
 <p>
-	<h2>Motto</h2>
 	<i><%=h @person.motto %></i>
 </p>
 
 <p>
-	<h2>Memberships</h2>
-</p>
-
-<p>
-	<h2>Things</h2>
-</p>
-
-<p>
-	<h2>Users</h2>
+	<h2>Credits</h2>
+	<% @person.credits.each do |credit| -%>
+	  <%= link_to credit.thing.title, thing_path(credit.thing.id) %> (as <%= credit.role.capitalize %>)<br />
+	<% end -%>
 </p>
 
 <% if user_signed_in? -%>

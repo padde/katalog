@@ -19,6 +19,7 @@ class ThingsController < ApplicationController
 
   def new
     @thing = Thing.new
+    1.times { @thing.credits.build }
 
     respond_to do |format|
       format.html
