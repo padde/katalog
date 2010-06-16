@@ -4,5 +4,6 @@ class Thing < ActiveRecord::Base
   
   accepts_nested_attributes_for :credits, :allow_destroy => true
   
-  validates_presence_of :title, :description
+  validates_presence_of :title, :description, :credits
+  validates_associated :credits
 end

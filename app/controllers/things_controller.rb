@@ -3,27 +3,18 @@ class ThingsController < ApplicationController
   
   def index
     @things = Thing.all
-
-    respond_to do |format|
-      format.html
-    end
+    respond_to &:html
   end
 
   def show
     @thing = Thing.find(params[:id])
-
-    respond_to do |format|
-      format.html
-    end
+    respond_to &:html
   end
 
   def new
     @thing = Thing.new
-    1.times { @thing.credits.build }
-
-    respond_to do |format|
-      format.html
-    end
+    @thing.credits.build
+    respond_to &:html
   end
 
   def edit
