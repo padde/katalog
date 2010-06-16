@@ -1,7 +1,10 @@
 class User < ActiveRecord::Base
-  devise :registerable, :authenticatable, :recoverable,
+  devise :registerable, :database_authenticatable, :recoverable,
          :rememberable, :trackable, :validatable
-
+  
+  has_many :accounts
+  has_many :people, :through => :accounts
+  
   attr_accessible :email, :password, :password_confirmation, :username
   
   validates_uniqueness_of :username

@@ -2,6 +2,8 @@ class GroupsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
   
   def index
+    @people = current_user.people
+    # @groups = @people.groups
     @groups = Group.all
 
     respond_to do |format|

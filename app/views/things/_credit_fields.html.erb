@@ -1,0 +1,9 @@
+<p class="fields">
+  <%= f.label :person_id, 'Person:' %>
+  <%= f.collection_select(:person_id, Person.all, :id, :full_name, {:prompt => ""}) %>
+
+  <%= f.label :role, 'with role' %>
+  <%= f.text_field :role %>
+
+  <%= link_to_remove_fields 'remove', f %>
+</p>
