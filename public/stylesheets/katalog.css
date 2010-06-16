@@ -13,12 +13,11 @@ body, input, textarea {
 }
 
 a, a:active, a:hover, a:visited {
-	text-decoration: none;
+	text-decoration: underline;
 	color: black;
 }
 a:active, a:hover {
-	background-color: #dfdfdf;
-	text-decoration: underline;
+	color: black;
 }
 
 h1 {
@@ -30,61 +29,93 @@ p {
 	margin-bottom: 1em;
 }
 
-#wrap {
-	margin: 30px auto;
-	background: #fff;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+#wrapper {
+	height: auto;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
 	overflow:hidden;
 }	
 
-#user {
+#access .user {
+	font-style: italic;
 	background: #fff;
-	margin: 0;
-	padding: 10px;
-	width: 940px;
 	text-align: right;
 	font-size: 12px;
 }
 
-#logo {
-	background: #fff;
-	margin: 0;
-	padding: 0 20px 20px 20px;
-	width: 920px;
-	text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+#access .user span {
+	padding-right: 12px;
 }
 
-#logo a {
-	font-size: 40px;
+#access .username {
+	margin-left: 2px;
+	font-style: normal;
+	font-weight: normal;
+	letter-spacing: 1.5px;
+	text-align: center;
+	text-transform: uppercase;
+	padding-top: 3px;
+	color: #444;
+}
+
+#access .user span span{
+	padding-right: 1px;
+}
+
+#site-title {
+	line-height: 18px;
 	font-weight: bold;
-	color: #222;
-	text-decoration:none;
+	letter-spacing: 1.5px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 18px;
+	padding-top: 3px;
+	color: #444;
 }
 
-#menu {
-	margin: 0;
-	padding: 0;
-	width: 960px;
-	background: #eee;
+#site-title a {
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
 }
 
-#menu a {
+#site-title a:hover {
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0);
+	color: black;
+}
+
+.menu {
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	text-align: left;
+	text-transform: uppercase;
+	margin-top: 4px;
+	vertical-align: baseline;
+}
+
+.menu li {
+	float: left;
+	list-style-type: square;
+	list-style-position: inside;
+}
+
+.menu li a, .menu li a:hover {
+	padding-right: 3px;
+	padding-left: 3px;
+	padding-bottom: -14px;
+	padding-top: -2px;
+	margin-right: 9px;	
+	letter-spacing: 1px;
 	color: #222;
-	text-decoration: none;
-	padding: 10px 20px;
 	float:left ;
+	text-decoration: none;	
+
 }
 
-#menu a:hover {
+.menu li a:hover {
+	text-shadow: 0px 0px 1px black;
 	background: #fff;
-	color: #333;
-	text-decoration: underline;
-}
-
-#menu a .current {
-	background: #fff;
+	color: black;
 }
 
 #flash_notice, #flash_alert, .errorExplanation {
@@ -111,8 +142,10 @@ p {
 }
 
 #content {
-	padding:  30px 30px 40px 30px;
-	width: 880px;
+	padding-left: 32px;
+	padding-bottom: 46px;
+	padding-right: 32px;
+	padding-top: 32px;
 	line-height: 1.5em;
 }
 
@@ -145,18 +178,78 @@ table tr td {
 #controls a {
 	color: #333;
 	text-decoration: none;
-	padding: 10px;
+	padding: 5px;
 	background: #fff;
 	margin-left: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-	border: 1px solid #888;
+	-webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
 }
 
 #controls a:hover {
-	color: #fff;
-	text-decoration: underline;
-	background: #222;
-	border: 1px solid #222;
+	color: #000;
+	text-decoration: none;
+	background: #eee;
 }
+
+#access .user span {
+}
+
+#main, #side, .user {
+	background-color: white;
+	-moz-box-shadow: 0px 2px 3px rgba(0,0,0,0.15);
+	-webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0.15);
+	box-shadow: 0px 2px 3px rgba(0,0,0,0.15);
+}
+#main {
+	height: auto;
+}
+
+#header {
+	margin-bottom: 6px;
+	height: 22px;
+}
+
+#side {
+	padding-top: 12px;
+	text-align: left;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	vertical-align: baseline;
+}
+
+#side ul {
+	text-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+	font-style: normal;
+	font-weight: normal;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 1.7px;
+}
+
+#side li {
+	text-shadow: 0px 0px 0px rgba(0,0,0,0.1);
+	letter-spacing: 0.3px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	list-style-position: inside;
+	text-transform: none;
+	list-style-type: square;
+}
+
+#side li a {
+	color: #555;
+}
+
+#side li a:hover {
+	background: #fff;
+	color: black;
+}
+
+.menu-item-current {
+	font-weight: bold;
+}
+

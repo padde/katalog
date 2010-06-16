@@ -57,35 +57,6 @@ textarea,
 	font-family: Georgia, "Bitstream Charter", serif;
 }
 
-h3#comments-title,
-h3#reply-title,
-#access .menu,
-#access div.menu ul,
-#cancel-comment-reply-link,
-.form-allowed-tags,
-#site-info,
-#site-title,
-#wp-calendar,
-.comment-meta,
-.comment-body tr th,
-.comment-body thead th,
-.entry-content label,
-.entry-content tr th,
-.entry-content thead th,
-.entry-meta,
-.entry-title,
-.entry-utility,
-#respond label,
-.navigation,
-.page-title,
-.pingback p,
-.reply,
-.widget-title,
-.wp-caption-text,
-input[type=submit]
-{
-	font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
-}
 pre {
 	font-family: "Courier 10 Pitch", Courier, monospace;
 }
