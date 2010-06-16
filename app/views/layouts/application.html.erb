@@ -47,11 +47,11 @@
 			</div><!-- #header -->
 
 			<div id="main" class="grid_12">
-				<div id="container" class="grid_12 alpha">
+				<div id="container" class="grid_8 alpha">
 					<div id="content" role="main">
 									
 					<% flash.each do |name, msg| -%>
-						<%= content_tag :div, msg, :class => "grid_12", :id => "flash_#{name}" %>
+						<%= content_tag :div, msg, :class => "grid_8", :id => "flash_#{name}" %>
 						<div class="clear"></div>
 					<% end -%>
 					
@@ -59,8 +59,11 @@
 						<%= yield %>
 					</div>
 					<div class="clear"></div>
-
 					</div><!-- #content -->
+
+					<div id="content-side" role="main-side">
+					
+					</div><!-- #content-side -->
 				</div><!-- #container -->
 			</div><!-- #main -->
 			<div id="side" class="grid_4 alpha">
