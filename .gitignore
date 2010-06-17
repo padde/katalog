@@ -9,3 +9,7 @@ doc/api
 doc/app
 doc/plugins
 db/*.sqlite3
+app/views/layouts/application.html copy.erb
+app/views/layouts/application.html copy 2.erb
+tmp/mockup1.html
+tmp/mockup1.css

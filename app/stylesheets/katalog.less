@@ -1,27 +1,80 @@
+@import url(../../public/stylesheets/960.css);
+/* Importing the grid css here so LESS will find the mixins in "apply 960 grid to layout" */
+
+/* Defining colors (for LESS mixins) */
+
+.background-dark { background-color: #eee;}
+.paper-light { background-color: #f8f8f8;}
+
+
+/* Defining visual effects (for LESS mixins) */
+
 .block-shadow {
 	-moz-box-shadow: 0px 2px 3px rgba(0,0,0,0.15);
-	-webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0.15);
+	-webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.15);
 	box-shadow: 0px 2px 3px rgba(0,0,0,0.15);
 }
 
 .block-shiny {
 	border-bottom-color: rgba(255,255,255,0.75);
-	border-top-color: rgba(255,255,255,0.75);
+	border-top-color: rgba(255,255,255,0.5);
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	border-top-style: solid;
 	border-top-width: 1px;
 }
 
-.block {
-/* 	background-image: url(../images/dpaper.png) */
+.button {
+	border-width: 1px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+	/* NOTE: webkit gradient implementation is not as per spec */
+	background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+	background:-moz-linear-gradient(top, #fff, #eee);
+	background:linear-gradient(top, #fff, #eee); /* standards version last */
 }
+
+.button-hover {
+	color: #000;
+	text-decoration: none;
+	background: #eee;
+	/* NOTE: webkit gradient implementation is not as per spec */
+	background:-webkit-gradient(linear, left top, left bottom, from(#eee), to(#ddd));
+	background:-moz-linear-gradient(top, #eee, #ddd);
+	background:linear-gradient(top, #eee, #ddd	); /* standards version last */
+}
+
+.button-active {
+	background: #ddd;
+	/* NOTE: webkit gradient implementation is not as per spec */
+	background:-webkit-gradient(linear, left top, left bottom, from(#ddd), to(#eee));
+	background:-moz-linear-gradient(top, #ddd, #eee);
+	background:linear-gradient(top, #ddd, #eee	); /* standards version last */
+}
+
+.block {
+/* 	background-image: url(../images/dpaper.png) */                                             
+	}
+	
+/* apply 960 grid to layout */
+
+#wrapper {
+	.container_16;
+}
+
+/* Done with pre-defintions */
+
+
 body, input, textarea {
 	font-size: 100%;
 	font-family: Vollkorn;
-	color: #333;
-	background-color: #eee;
-	text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+	color: #333333;
+	.background-dark;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.75);
+	height: auto;
 }
 
 a, a:active, a:hover, a:visited {
@@ -51,7 +104,6 @@ p {
 
 #access .user {
 	font-style: italic;
-	background: #fff;
 	text-align: right;
 	font-size: 12px;
 }
@@ -107,16 +159,12 @@ p {
 
 .menu li {
 	float: left;
-	list-style-type: square;
-	list-style-position: inside;
+	list-style-type: none;
 }
 
-.menu li a, .menu li a:hover {
-	padding-right: 3px;
-	padding-left: 3px;
-	padding-bottom: -14px;
-	padding-top: -2px;
-	margin-right: 9px;	
+.menu li a {
+	padding-right: 9px;
+	padding-left: 9px;
 	letter-spacing: 1px;
 	color: #222;
 	float:left ;
@@ -125,9 +173,18 @@ p {
 }
 
 .menu li a:hover {
-	text-shadow: 0px 0px 1px black;
-	background: #fff;
 	color: black;
+}
+
+.menu-item-current {
+	padding-bottom: 12px;
+	margin-bottom: -12px;
+	.block-shadow;
+}
+
+.menu-item-current {
+	font-weight: bold;
+	.paper-light;
 }
 
 #flash_notice, #flash_alert, .errorExplanation {
@@ -162,7 +219,7 @@ p {
 }
 
 input, textarea {
-	font-size: 14px;
+	font-size: 16px;
 }
 
 input {
@@ -198,35 +255,18 @@ table tr td {
 	text-decoration: none;
 	background: #fff;
 	margin-left: 5px;
-	border-width: 1px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-	-webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
-	box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
-	/* NOTE: webkit gradient implementation is not as per spec */
-	background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
-	background:-moz-linear-gradient(top, #fff, #eee);
-	background:linear-gradient(top, #fff, #eee); /* standards version last */
+	.button;
 }
 
 #controls a:hover {
 	color: #000;
 	text-decoration: none;
-	background: #eee;
-	/* NOTE: webkit gradient implementation is not as per spec */
-	background:-webkit-gradient(linear, left top, left bottom, from(#eee), to(#ddd));
-	background:-moz-linear-gradient(top, #eee, #ddd);
-	background:linear-gradient(top, #eee, #ddd	); /* standards version last */
+	.button-hover;
 }
 #controls a:active {
 	color: #000;
 	text-decoration: none;
-	background: #ddd;
-	/* NOTE: webkit gradient implementation is not as per spec */
-	background:-webkit-gradient(linear, left top, left bottom, from(#ddd), to(#eee));
-	background:-moz-linear-gradient(top, #ddd, #eee);
-	background:linear-gradient(top, #ddd, #eee	); /* standards version last */
+	.button-active;
 }
 
 
@@ -234,13 +274,13 @@ table tr td {
 }
 
 #main, #side, .user {
-	background-color: #f8f8f8;
+	.paper-light;
 	.block-shadow;
 	.block-shiny;
 	.block;
 }
 
-#main {
+#main, #side {
 	height: auto;
 	margin-bottom: 12px;
 }
@@ -253,7 +293,7 @@ table tr td {
 #side {
 	padding-top: 12px;
 	text-align: left;
-	font-size: 12px;
+	font-size: 16px;
 	font-style: normal;
 	font-weight: normal;
 	vertical-align: baseline;
@@ -263,9 +303,12 @@ table tr td {
 	text-shadow: 0px 0px 1px rgba(0,0,0,0.2);
 	font-style: normal;
 	font-weight: normal;
-	font-size: 13px;
+	font-size: 18px;
 	text-transform: uppercase;
 	letter-spacing: 1.7px;
+	padding: 0px 24px 12px 24px;
+	margin: 0 0 12px 0;
+	border-bottom: 2px solid white;
 }
 
 #side li {
@@ -273,10 +316,14 @@ table tr td {
 	letter-spacing: 0.3px;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 12px;
+	font-size: 15px;
 	list-style-position: inside;
 	text-transform: none;
 	list-style-type: square;
+}
+
+#side ul h4 {
+	margin-bottom: 4px;
 }
 
 #side li a {
@@ -288,7 +335,4 @@ table tr td {
 	color: black;
 }
 
-.menu-item-current {
-	font-weight: bold;
-}
 

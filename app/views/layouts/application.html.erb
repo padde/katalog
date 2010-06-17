@@ -20,7 +20,7 @@
 					</div><!-- #branding -->
 
 					<div id="access" role="navigation" class="grid_13 omega">
-						<div class="menu grid_9 alpha">
+						<div class="menu grid_8 alpha">
 								<li class="menu-item <%= 'menu-item-current' if @controller.controller_name == 'things' %>">
 									<%= link_to 'Things', things_path %>
 								</li>
@@ -29,7 +29,7 @@
 								</li>
 							</ul>
 						</div>
-						<div class="user grid_4 alpha">
+						<div class="user grid_5 alpha">
 						<span>
 							<% if user_signed_in? -%>
 								<span>Hello, <span class="username"><%= current_user.username %>!</span></span>
@@ -44,12 +44,12 @@
 				</div><!-- #masthead -->
 			</div><!-- #header -->
 
-			<div id="main" class="grid_12">
-				<div id="container" class="grid_8 alpha">
+			<div id="main" class="grid_11">
+				<div id="container" class="grid_11 alpha">
 					<div id="content" role="main">
 									
 					<% flash.each do |name, msg| -%>
-						<%= content_tag :div, msg, :class => "grid_8", :id => "flash_#{name}" %>
+						<%= content_tag :div, msg, :class => "grid_11", :id => "flash_#{name}" %>
 						<div class="clear"></div>
 					<% end -%>
 					
@@ -64,19 +64,19 @@
 					</div><!-- #content-side -->
 				</div><!-- #container -->
 			</div><!-- #main -->
-			<div id="side" class="grid_4 alpha">
-		    	<ul>Study
+			<div id="side" class="grid_5 alpha">
+		    	<ul><h4>Study</h4>
 		            <li><a href="index.html">Wechselstrom</a></li>
 		        	<li><a href="index.html">K3 — wenn Künstler Kunst…</a></li>
 		            <li><a href="index.html">Stoptrick</a></li>
 		            <li><a href="index.html">(3 weitere…)</a></li>
 		        </ul>
-		        <ul>Groups
+		        <ul><h4>Groups</h4>
 		        	<li><a href="index.html">ColorViolence.net</a></li>
 		            <li><a href="index.html">marke.6</a></li>
 		            <li><a href="index.html">ktw</a></li>
 		        </ul>
-		        <ul>Shop
+		        <ul><h4>Shop</h4>
 		        	<li><a href="index.html">5 Gemälde</a></li>
 		            <li><a href="index.html">1 Fotos</a></li>
 		            <li><a href="index.html">26 Poster</a></li>
