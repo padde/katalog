@@ -204,11 +204,6 @@
   background: -moz-linear-gradient(top, #dddddd, #eeeeee);
   background: linear-gradient(top, #dddddd, #eeeeee);
 }
-#wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  width: 960px;
-}
 body, input, textarea {
   font-size: 100%;
   font-family: Vollkorn;
