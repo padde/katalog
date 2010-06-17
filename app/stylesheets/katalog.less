@@ -1,0 +1,294 @@
+.block-shadow {
+	-moz-box-shadow: 0px 2px 3px rgba(0,0,0,0.15);
+	-webkit-box-shadow: 0px 2px 3px rgba(0,0,0,0.15);
+	box-shadow: 0px 2px 3px rgba(0,0,0,0.15);
+}
+
+.block-shiny {
+	border-bottom-color: rgba(255,255,255,0.75);
+	border-top-color: rgba(255,255,255,0.75);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-top-style: solid;
+	border-top-width: 1px;
+}
+
+.block {
+/* 	background-image: url(../images/dpaper.png) */
+}
+body, input, textarea {
+	font-size: 100%;
+	font-family: Vollkorn;
+	color: #333;
+	background-color: #eee;
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+}
+
+a, a:active, a:hover, a:visited {
+	text-decoration: underline;
+	color: black;
+}
+a:active, a:hover {
+	color: black;
+}
+
+h1 {
+	font-size: 30px;
+	margin-bottom: 0.6em;
+}
+
+p {
+	margin-bottom: 1em;
+}
+
+#wrapper {
+	height: auto;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	overflow:hidden;
+}	
+
+#access .user {
+	font-style: italic;
+	background: #fff;
+	text-align: right;
+	font-size: 12px;
+}
+
+#access .user span {
+	padding-right: 12px;
+}
+
+#access .username {
+	margin-left: 2px;
+	font-style: normal;
+	font-weight: normal;
+	letter-spacing: 1.5px;
+	text-align: center;
+	text-transform: uppercase;
+	padding-top: 3px;
+	color: #444;
+}
+
+#access .user span span{
+	padding-right: 1px;
+}
+
+#site-title {
+	line-height: 18px;
+	font-weight: bold;
+	letter-spacing: 1.5px;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 18px;
+	padding-top: 3px;
+	color: #444;
+}
+
+#site-title a {
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+#site-title a:hover {
+	text-shadow: 1px 1px 1px rgba(255, 255, 255, 0);
+	color: black;
+}
+
+.menu {
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	text-align: left;
+	text-transform: uppercase;
+	margin-top: 4px;
+	vertical-align: baseline;
+}
+
+.menu li {
+	float: left;
+	list-style-type: square;
+	list-style-position: inside;
+}
+
+.menu li a, .menu li a:hover {
+	padding-right: 3px;
+	padding-left: 3px;
+	padding-bottom: -14px;
+	padding-top: -2px;
+	margin-right: 9px;	
+	letter-spacing: 1px;
+	color: #222;
+	float:left ;
+	text-decoration: none;	
+
+}
+
+.menu li a:hover {
+	text-shadow: 0px 0px 1px black;
+	background: #fff;
+	color: black;
+}
+
+#flash_notice, #flash_alert, .errorExplanation {
+	margin: 0 0 20px 0;
+	padding: 10px;
+	width: 620px;
+	-webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+	-moz-box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+	box-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+}
+
+#flash_notice {
+	background: #9c6;
+	border: 1px solid #4A992A;
+}
+
+#flash_alert, .errorExplanation {
+	background: #F2998B;
+	border: 1px solid #DA2900;
+}
+
+.fieldWithErrors input {
+	border: 2px solid #DA2900;
+}
+
+#content {
+	padding-left: 32px;
+	padding-bottom: 46px;
+	padding-right: 32px;
+	padding-top: 32px;
+	line-height: 1.5em;
+}
+
+input, textarea {
+	font-size: 14px;
+}
+
+input {
+	width: 296px;
+}
+
+input[type=submit], input[type=checkbox] {
+	width: auto;
+	margin-top: 20px;
+}
+
+textarea {
+	width: 500px;
+	height: 200px;
+}
+
+table tr td {
+	padding: 0 10px 10px 0;
+}
+
+#controls {
+	text-align:right;
+}
+
+#controls a {
+	padding-left: 3px;
+	padding-bottom: 0px;
+	padding-right: 3px;
+	padding-top: 3px;
+	border-color: #fefffe;
+	border-style: solid;
+	color: #333;
+	text-decoration: none;
+	background: #fff;
+	margin-left: 5px;
+	border-width: 1px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+	box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+	/* NOTE: webkit gradient implementation is not as per spec */
+	background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+	background:-moz-linear-gradient(top, #fff, #eee);
+	background:linear-gradient(top, #fff, #eee); /* standards version last */
+}
+
+#controls a:hover {
+	color: #000;
+	text-decoration: none;
+	background: #eee;
+	/* NOTE: webkit gradient implementation is not as per spec */
+	background:-webkit-gradient(linear, left top, left bottom, from(#eee), to(#ddd));
+	background:-moz-linear-gradient(top, #eee, #ddd);
+	background:linear-gradient(top, #eee, #ddd	); /* standards version last */
+}
+#controls a:active {
+	color: #000;
+	text-decoration: none;
+	background: #ddd;
+	/* NOTE: webkit gradient implementation is not as per spec */
+	background:-webkit-gradient(linear, left top, left bottom, from(#ddd), to(#eee));
+	background:-moz-linear-gradient(top, #ddd, #eee);
+	background:linear-gradient(top, #ddd, #eee	); /* standards version last */
+}
+
+
+#access .user span {
+}
+
+#main, #side, .user {
+	background-color: #f8f8f8;
+	.block-shadow;
+	.block-shiny;
+	.block;
+}
+
+#main {
+	height: auto;
+	margin-bottom: 12px;
+}
+
+#header {
+	margin-bottom: 6px;
+	height: 22px;
+}
+
+#side {
+	padding-top: 12px;
+	text-align: left;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	vertical-align: baseline;
+}
+
+#side ul {
+	text-shadow: 0px 0px 1px rgba(0,0,0,0.2);
+	font-style: normal;
+	font-weight: normal;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 1.7px;
+}
+
+#side li {
+	text-shadow: 0px 0px 0px rgba(0,0,0,0.1);
+	letter-spacing: 0.3px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 12px;
+	list-style-position: inside;
+	text-transform: none;
+	list-style-type: square;
+}
+
+#side li a {
+	color: #555;
+}
+
+#side li a:hover {
+	background: #fff;
+	color: black;
+}
+
+.menu-item-current {
+	font-weight: bold;
+}
+
