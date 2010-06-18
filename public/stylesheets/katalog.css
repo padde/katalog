@@ -332,7 +332,7 @@ p { margin-bottom: 1em; }
   line-height: 1.5em;
 }
 input, textarea { font-size: 16px; }
-input { width: 296px; }
+input { /*width: 296px;*/ }
 input[type=submit], input[type=checkbox] {
   width: auto;
   margin-top: 20px;

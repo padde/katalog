@@ -13,6 +13,13 @@
 	<% end %>
 </p>
 
+<p>
+	<h2>Gallery</h2>
+	<% @thing.images.each do |image| %>
+		<%= link_to image_tag(image.data.url(:thumb)), image.data.url(:large) %>
+	<% end %>
+</p>
+
 <% if user_signed_in? -%>
 <div id="controls">
 	<%= link_to 'Edit', edit_thing_path(@thing) %>
