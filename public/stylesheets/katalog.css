@@ -310,7 +310,7 @@ p { margin-bottom: 1em; }
 #flash_notice, #flash_alert, .errorExplanation {
   margin: 0 0 20px 0;
   padding: 10px;
-  width: 620px;
+  width: 560px;
   -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
@@ -332,7 +332,6 @@ p { margin-bottom: 1em; }
   line-height: 1.5em;
 }
 input, textarea { font-size: 16px; }
-input { /*width: 296px;*/ }
 input[type=submit], input[type=checkbox] {
   width: auto;
   margin-top: 20px;
