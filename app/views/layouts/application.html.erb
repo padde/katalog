@@ -46,7 +46,7 @@
 
 			<div id="main" class="grid_11">
 				<div id="container" class="grid_11 alpha">
-					<div id="content" role="main">
+					<div id="content" role="main" class="grid_6 alpha">
 									
 					<% flash.each do |name, msg| -%>
 						<%= content_tag :div, msg, :class => "grid_11", :id => "flash_#{name}" %>
@@ -59,8 +59,14 @@
 					<div class="clear"></div>
 					</div><!-- #content -->
 
-					<div id="content-side" role="main-side">
-					
+					<div id="content-side" role="main-side" class="grid_4">
+					 <div id="connect" class="grid_4 omega tohover">
+	                	<p>
+	                	<a href="index.html"><img src="images/fbar01.gif" alt="contact" /></a>
+	                	<a href="index.html"><img src="images/fbar02.gif" alt="like" /></a>
+	                	<a href="index.html"><img src="images/fbar03.gif" alt="feed" /></a>
+	                	</p>
+              	</div>
 					</div><!-- #content-side -->
 				</div><!-- #container -->
 			</div><!-- #main -->
