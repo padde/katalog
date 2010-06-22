@@ -1,0 +1,10 @@
+<p class="fields">
+  <% unless f.object.new_record? -%>
+    <%= image_tag f.object.data.url(:thumb) %>
+  <% else -%>
+    <%= f.label :data, 'Image — ' %>
+    <%= f.file_field :data %>
+  <% end -%>
+
+  <%= link_to_remove_fields 'remove', f %>
+</p>

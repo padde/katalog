@@ -34,7 +34,7 @@ class ThingsController < ApplicationController
   end
 
   def update
-    @thing = Thing.find(params[:id])
+    @thing = Thing.find(params[:id], :include => [:credits,:images])
 
     respond_to do |format|
       if @thing.update_attributes(params[:thing])
