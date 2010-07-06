@@ -45,12 +45,12 @@
 				</div><!-- #masthead -->
 			</div><!-- #header -->
 
-			<div id="main" class="grid_11">
-				<div id="container" class="grid_11 alpha">
-					<div id="content" role="main" class="grid_6 alpha">
+			<div id="main" class="grid_16">
+				<div id="container" class="grid_16 alpha">
+					<div id="content" role="main" class="grid_10 alpha">
 									
 					<% flash.each do |name, msg| -%>
-						<%= content_tag :div, msg, :class => "grid_11", :id => "flash_#{name}" %>
+						<%= content_tag :div, msg, :class => "grid_10", :id => "flash_#{name}" %>
 						<div class="clear"></div>
 					<% end -%>
 					
@@ -59,37 +59,8 @@
 					</div>
 					<div class="clear"></div>
 					</div><!-- #content -->
-
-					<div id="content-side" role="main-side" class="grid_4">
-					 <div id="connect" class="grid_4 omega tohover">
-	                	<p>
-	                	<a href="index.html"><img src="images/fbar01.gif" alt="contact" /></a>
-	                	<a href="index.html"><img src="images/fbar02.gif" alt="like" /></a>
-	                	<a href="index.html"><img src="images/fbar03.gif" alt="feed" /></a>
-	                	</p>
-              	</div>
-					</div><!-- #content-side -->
 				</div><!-- #container -->
 			</div><!-- #main -->
-			<div id="side" class="grid_5 alpha">
-		    	<ul><h4>Study</h4>
-		            <li><a href="index.html">Wechselstrom</a></li>
-		        	<li><a href="index.html">K3 — wenn Künstler Kunst…</a></li>
-		            <li><a href="index.html">Stoptrick</a></li>
-		            <li><a href="index.html">(3 weitere…)</a></li>
-		        </ul>
-		        <ul><h4>Groups</h4>
-		        	<li><a href="index.html">ColorViolence.net</a></li>
-		            <li><a href="index.html">marke.6</a></li>
-		            <li><a href="index.html">ktw</a></li>
-		        </ul>
-		        <ul><h4>Shop</h4>
-		        	<li><a href="index.html">5 Gemälde</a></li>
-		            <li><a href="index.html">1 Fotos</a></li>
-		            <li><a href="index.html">26 Poster</a></li>
-		            <li><a href="index.html">(276 weitere…)</a></li>
-		        </ul>
-			</div><!-- #side -->
 		</div><!-- #wrapper -->
 						
 </body>

@@ -209,6 +209,7 @@
   background: -moz-linear-gradient(top, #dddddd, #eeeeee);
   background: linear-gradient(top, #dddddd, #eeeeee);
 }
+* { text-rendering: optimizeLegibility; }
 body, input, textarea {
   font-size: 100%;
   font-family: Vollkorn;
@@ -265,7 +266,7 @@ p { margin-bottom: 1em; }
 }
 #access .user span span { padding-right: 1px; }
 #site-title {
-  line-height: 18px;
+  line-height: 30px;
   font-weight: bold;
   letter-spacing: 1.5px;
   text-align: center;
@@ -285,7 +286,7 @@ p { margin-bottom: 1em; }
   font-weight: normal;
   text-align: left;
   text-transform: uppercase;
-  margin-top: 4px;
+  margin-top: 9px;
   vertical-align: baseline;
 }
 .menu li {
@@ -332,7 +333,6 @@ p { margin-bottom: 1em; }
 #content {
   padding-left: 32px;
   padding-bottom: 46px;
-  padding-right: 28px;
   padding-top: 32px;
   margin: 0px;
   line-height: 1.5em;
@@ -405,7 +405,7 @@ table tr td { padding: 0 10px 10px 0; }
   margin-bottom: 12px;
 }
 #header {
-  margin-bottom: 6px;
+  margin-bottom: 14px;
   height: 22px;
 }
 #side {
