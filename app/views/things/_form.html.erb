@@ -21,6 +21,11 @@
   <p><%= link_to_add_fields 'add image', f, :images %></p>
   
   <p>
+    <%= f.label :license %><br />
+    <%= f.text_field :license %>
+  </p>
+  
+  <p>
     <%= f.submit submit %>
   </p>
 <% end %>

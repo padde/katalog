@@ -2,7 +2,7 @@ class PeopleController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
   
   def index
-    @people = Person.all
+    @people = Person.find(:all, :order => "last_name DESC")
 
     respond_to do |format|
       format.html

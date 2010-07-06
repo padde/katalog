@@ -1,8 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :things
-
-  map.devise_for :users, :path_names => { :sign_up => 'register', :sign_in => 'log_in' }#,
-                         # :controllers => { :registrations => "rich_registrations" }
+  map.devise_for :users, :path_names => { :sign_up => 'register', :sign_in => 'log_in' }
 
   map.resources :people
   map.resources :groups
