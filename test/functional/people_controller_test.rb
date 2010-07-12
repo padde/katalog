@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class PeopleControllerTest < ActionController::TestCase
+  setup do
+    @person = people(:one)
+  end
+
   test "should get index" do
     get :index
     assert_response :success
@@ -14,30 +18,30 @@ class PeopleControllerTest < ActionController::TestCase
 
   test "should create person" do
     assert_difference('Person.count') do
-      post :create, :person => { }
+      post :create, :person => @person.attributes
     end
 
     assert_redirected_to person_path(assigns(:person))
   end
 
   test "should show person" do
-    get :show, :id => people(:one).to_param
+    get :show, :id => @person.to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => people(:one).to_param
+    get :edit, :id => @person.to_param
     assert_response :success
   end
 
   test "should update person" do
-    put :update, :id => people(:one).to_param, :person => { }
+    put :update, :id => @person.to_param, :person => @person.attributes
     assert_redirected_to person_path(assigns(:person))
   end
 
   test "should destroy person" do
     assert_difference('Person.count', -1) do
-      delete :destroy, :id => people(:one).to_param
+      delete :destroy, :id => @person.to_param
     end
 
     assert_redirected_to people_path

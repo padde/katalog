@@ -1,13 +1,8 @@
-ActionController::Routing::Routes.draw do |map|
-  map.devise_for :users, :path_names => { :sign_up => 'register', :sign_in => 'log_in' }
+Katalog::Application.routes.draw do |map|
+  devise_for :users, :path_names => { :sign_up => 'register', :sign_in => 'log_in' }
+  
+  resources :things
+  resources :people
 
-  map.resources :people
-  map.resources :groups
-  map.resources :things
-  map.resources :users
-  
-  map.root :controller => 'things'
-  
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  root :to => "people#index"
 end

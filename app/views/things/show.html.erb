@@ -1,5 +1,5 @@
 <h1>
-  <%=h @thing.title %>
+  <%= @thing.title %>
 </h1>
 
 <p>
@@ -9,20 +9,20 @@
 <p>
 	<h2>Credits</h2>
 	<% @thing.credits.each do |credit| -%>
-		<%= credit.role.capitalize %> — <%= link_to credit.person.full_name, person_path(credit.person) unless credit.person_id.nil?%><br />
+		<%= credit.role.capitalize %> — <%= link_to credit.person.full_name, person_path(credit.person) %><br />
 	<% end -%>
 </p>
 
 <p>
 	<h2>Gallery</h2>
 	<% @thing.images.each do |image| -%>
-		<%= link_to image_tag(image.data.url(:thumb)), image.data.url(:large) %>
+		<%= link_to image_tag(image.data.url(:thumb)), image.data.url(:large), :rel => 'lightbox[gallery]' %>
 	<% end -%>
 </p>
 
 <p>
 	<h2>License</h2>
-	<%=h @thing.license %>
+	<%= @thing.license %>
 </p>
 
 <% if user_signed_in? -%>

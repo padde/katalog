@@ -1,14 +1,9 @@
-<div id="controls">
-	<%= link_to 'Edit', edit_person_path(@person) %>
-	<%= link_to 'Delete', @person, :confirm => 'Are you sure?', :method => :delete %>
-</div>
+<p id="notice"><%= notice %></p>
 
-<h1>
-  <%=h @person.full_name %>
-</h1>
+<h1><%= @person.full_name %></h1>
 
 <p>
-	<i><%=h @person.motto %></i>
+	<i><%= @person.motto %></i>
 </p>
 
 <p>
@@ -19,5 +14,9 @@
 </p>
 
 <% if user_signed_in? -%>
-
+	<div id="controls">
+		<%= link_to 'Edit', edit_person_path(@person) %>
+		<%= link_to 'Delete', @person, :confirm => 'Are you sure?', :method => :delete %>
+	</div>
 <% end -%>
+

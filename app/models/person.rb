@@ -2,9 +2,6 @@ class Person < ActiveRecord::Base
   has_many :credits
   has_many :things, :through => :credits
   
-  has_many :memberships
-  has_many :groups, :through => :memberships
-  
   has_many :accounts
   has_many :users, :through => :accounts
   

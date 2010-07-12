@@ -9,15 +9,12 @@ provide a simple interface for students and other contributors at a university
 Getting Started
 ===============
 
-For this application to work you will need:
+For this application to work you will need imagemagick.
 
-	sudo gem install devise --version 1.0.7
-	sudo gem install less --version 1.2.21
-
-on linux machines:
+on linux machines type:
 
 	sudo apt-get install imagemagick
 
-osx (you will need macports):
+on osx (you will need macports) type:
 
 	sudo port install imagemagick

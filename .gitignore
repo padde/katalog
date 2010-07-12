@@ -1,16 +1,9 @@
 config/database.yml
-*~
-*.cache
-*.log
-*.pid
-tmp/**/*
 .DS_Store
-doc/api
-doc/app
-doc/plugins
+doc/**/*
+*~
+.bundle
 db/*.sqlite3
-app/views/layouts/application.html copy.erb
-app/views/layouts/application.html copy 2.erb
-tmp/mockup1.html
-tmp/mockup1.css
+log/*.log
+tmp/**/*
 public/system/datas/

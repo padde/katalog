@@ -1,15 +1,25 @@
-<% form_for(@thing, :html => {:multipart => true}) do |f| %>
-  <%= f.error_messages %>
+<%= form_for(@thing, :html => {:multipart => true}) do |f| %>
+  <% if @thing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@thing.errors.count, "error") %> prohibited this thing from being saved:</h2>
 
-  <p>
+      <ul>
+      <% @thing.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
-  </p>
-  <p>
+  </div>
+  <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
-  </p>
-  
+  </div>
+
   <% f.fields_for :credits do |builder| -%>
     <%= render 'credit_fields', :f => builder %>
   <% end -%>
@@ -19,13 +29,12 @@
     <%= render 'image_fields', :f => builder %>
   <% end -%>
   <p><%= link_to_add_fields 'add image', f, :images %></p>
-  
-  <p>
+
+  <div class="field">
     <%= f.label :license %><br />
     <%= f.text_field :license %>
-  </p>
-  
-  <p>
-    <%= f.submit submit %>
-  </p>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

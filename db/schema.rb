@@ -9,47 +9,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100706115934) do
-
-  create_table "accounts", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "person_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(:version => 20100712005323) do
 
   create_table "credits", :force => true do |t|
-    t.string   "role"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.integer  "person_id"
     t.integer  "thing_id"
-  end
-
-  create_table "groups", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
+    t.string   "role"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "images", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
     t.string   "data_file_name"
     t.string   "data_content_type"
     t.integer  "data_file_size"
     t.datetime "data_updated_at"
-    t.integer  "imageable_id"
-    t.string   "imageable_type"
-  end
-
-  create_table "memberships", :force => true do |t|
-    t.integer  "group_id"
-    t.string   "role"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "person_id"
   end
 
   create_table "people", :force => true do |t|
@@ -63,9 +41,9 @@ ActiveRecord::Schema.define(:version => 20100706115934) do
   create_table "things", :force => true do |t|
     t.string   "title"
     t.text     "description"
+    t.string   "license"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "license"
   end
 
   create_table "users", :force => true do |t|
@@ -80,9 +58,9 @@ ActiveRecord::Schema.define(:version => 20100706115934) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "username"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
