@@ -1,6 +1,6 @@
 <p class="fields">
   <%= f.label :person_id, 'Person — ' %>
-  <%= f.collection_select(:person_id, Person.all, :id, :full_name, {:prompt => ""}) %>
+  <%= f.collection_select(:person_id, Person.asc, :id, :full_name, {:prompt => ""}) %>
 
   <%= f.label :role, 'with role' %>
   <%= f.text_field :role, :size => 14 %>

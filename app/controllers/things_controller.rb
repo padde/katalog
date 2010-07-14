@@ -1,5 +1,5 @@
 class ThingsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user! #, :except => [:show, :index]
   
   # GET /things
   # GET /things.xml
@@ -27,8 +27,9 @@ class ThingsController < ApplicationController
   # GET /things/new.xml
   def new
     @thing = Thing.new
-    @thing.credits.build
-
+    if user_signed_in?
+      @thing.credits.build(:person => current_user.people.first)
+    end
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @thing }
@@ -83,4 +84,7 @@ class ThingsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+private
+  
 end

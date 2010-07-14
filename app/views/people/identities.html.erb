@@ -1,4 +1,4 @@
-<h1>People</h1>
+<h1>Your Identities</h1>
 
 <% @people.each do |person| %>
 	<%= link_to person.full_name, person %><br />
@@ -6,6 +6,6 @@
 
 <% if user_signed_in? -%>
 <div id="controls">
-	<%= link_to 'Show only my identities', identities_path %>
+	<%= link_to 'New identity', new_person_path %>
 </div>
 <% end -%>

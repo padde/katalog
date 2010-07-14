@@ -1,8 +1,21 @@
 class PeopleController < ApplicationController
+  before_filter :authenticate_user!, :except => [:show, :index]
+  
   # GET /people
   # GET /people.xml
   def index
-    @people = Person.find(:all, :order => "last_name DESC")
+    @people = Person.asc
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @people }
+    end
+  end
+  
+  # GET /people
+  # GET /people.xml
+  def identities
+    @people = Person.by_user(current_user).asc
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,6 +54,7 @@ class PeopleController < ApplicationController
   # POST /people.xml
   def create
     @person = Person.new(params[:person])
+    @person.user = current_user
 
     respond_to do |format|
       if @person.save

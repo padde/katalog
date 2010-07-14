@@ -2,13 +2,14 @@ class User < ActiveRecord::Base
   devise :registerable, :database_authenticatable, :recoverable,
          :rememberable, :trackable, :validatable
   
-  has_many :accounts
-  has_many :people, :through => :accounts
+  has_many :people
+  accepts_nested_attributes_for :people
   
-  attr_accessible :email, :password, :password_confirmation, :username
+  attr_accessible :email, :password, :password_confirmation, :username, :people_attributes
   
   validates_uniqueness_of :username
   validates_presence_of   :username
+  
   
   # Enable Login with username OR email
   def self.find_for_authentication(conditions={})
