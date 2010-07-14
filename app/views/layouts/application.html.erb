@@ -5,8 +5,8 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>bau-ha.us | <%= controller.controller_name %> </title>
-  <%= stylesheet_link_tag 'vollkorn', 'reset', '960', 'text', 'lightbox', 'katalog' %>
-  <%= javascript_include_tag :all %>
+  <%= stylesheet_link_tag 'vollkorn', 'reset', '960', 'text', 'jquery.fancybox-1.3.1', 'katalog' %>
+  <%= javascript_include_tag 'jquery-1.4.2.min', 'rails', 'jquery.mousewheel-3.0.2.pack', 'jquery.fancybox-1.3.1', 'application' %>
   <%= csrf_meta_tag %>
 </head>
 
@@ -32,14 +32,12 @@
 							</ul>
 						</div>
 						<div class="user grid_5 alpha">
-						<span>
 							<% if user_signed_in? -%>
-								<span>Hello, <span class="username"><%= current_user.username %>!</span></span>
+								<span>Hello, <span class="username"><%= link_to current_person.full_name, edit_user_registration_path %>!</span></span>
 								<span><%= link_to 'Not You?', destroy_user_session_path %></span> 
 							<% else -%>
 								<span><%= link_to 'Log in', new_user_session_path %> or</span>
 								<span><%= link_to 'Register', new_user_registration_path %> </span>
-						</span>
 							<% end -%>
 						</div>
 					</div><!-- #access -->
@@ -48,17 +46,17 @@
 
 			<div id="main" class="grid_16">
 				<div id="container" class="grid_16 alpha">
-					<div id="content" role="main" class="grid_10 alpha">
+					<div id="content" class="grid_10 alpha">
 									
-					<% flash.each do |name, msg| -%>
-						<%= content_tag :div, msg, :class => "grid_10", :id => "flash_#{name}" %>
-						<div class="clear"></div>
-					<% end -%>
+						<% flash.each do |name, msg| -%>
+							<%= content_tag :div, msg, :class => "grid_10", :id => "flash_#{name}" %>
+							<div class="clear"></div>
+						<% end -%>
 					
-					<div class="entry-content">
-						<%= yield %>
-					</div>
-					<div class="clear"></div>
+						<div class="entry-content">
+							<%= yield %>
+						</div>
+						<div class="clear"></div>
 					</div><!-- #content -->
 				</div><!-- #container -->
 			</div><!-- #main -->
