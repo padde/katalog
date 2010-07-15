@@ -19,11 +19,16 @@ $(document).ready(function() {
     'transitionOut' : 'elastic',
     'speedIn'       : 300,
     'speedOut'      : 300,
+    'overlayOpacity': 0.5,
+    'overlayColor'  : '#000',
+    'showCloseButton' : false,
     'titleShow'     : false,
-    'titlePosition' : 'over',
+    'titlePosition' : 'inside',
     'titleFormat'   : function(title, currentArray, currentIndex, currentOpts) {
       return '<span id="fancybox-title-over">' + title + '</span>';
     }
   });
+  
+  $("#fancybox-title-over").hide();
   
 });

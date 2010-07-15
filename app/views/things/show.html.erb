@@ -2,9 +2,7 @@
   <%= @thing.title %>
 </h1>
 
-<p>
-	<%=simple_format raw(@thing.description) %>
-</p>
+<%=format_user_text @thing.description %>
 
 <p>
 	<h2>Credits</h2>
@@ -17,7 +15,7 @@
 <p>
 	<h2>Gallery</h2>
 	<% @thing.images.each do |image| -%>
-		<%= link_to image_tag(image.data.url(:thumb), :alt => image.description), image.data.url(:large), :rel => 'fancybox' %>
+		<%= link_to image_tag(image.data.url(:thumb), :alt => "<b>#{image.title}</b><br />#{image.description}"), image.data.url(:large), :rel => 'fancybox' %>
 	<% end -%>
 </p>
 <% end -%>

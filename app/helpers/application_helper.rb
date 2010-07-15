@@ -11,7 +11,7 @@ module ApplicationHelper
     link_to_function( name, %Q{add_fields(this, "#{association}", "#{escape_javascript(fields)}")} )
   end
   
-  def current_person
-    current_user.people.first
+  def format_user_text (string)
+    OEmbed.transform(textilize(string, :filter_html))
   end
 end

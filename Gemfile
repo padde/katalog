@@ -26,4 +26,8 @@ gem 'meta_where'
 # Use CanCan for managing Permissions
 gem 'cancan'
 
-gem 'ruby-debug'
+# Use oembed_links to format user text
+gem 'oembed_links'
+
+# Use redcloth for textilize method
+gem 'RedCloth'
