@@ -338,6 +338,11 @@ p { margin-bottom: 1em; }
   line-height: 1.5em;
 }
 #content h2 { font-weight: bold; }
+#content table { margin-bottom: 1em; }
+#content table tr td {
+  padding: 0;
+  padding-right: 0.5em;
+}
 #content-side { padding-top: 46px; }
 input, textarea { font-size: 16px; }
 input[type=submit], input[type=checkbox] {
