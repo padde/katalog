@@ -33,11 +33,11 @@
 						</div>
 						<div class="user grid_5 alpha">
 							<% if user_signed_in? -%>
-								<span>Hello, <span class="username"><%= link_to current_person.full_name, edit_user_registration_path %>!</span></span>
-								<span><%= link_to 'Not You?', destroy_user_session_path %></span> 
+								<span>Hello, <span class="username"><%= link_to current_user.username, edit_user_registration_path %>!</span>
+								<%= link_to 'Not You?', destroy_user_session_path %></span> 
 							<% else -%>
-								<span><%= link_to 'Log in', new_user_session_path %> or</span>
-								<span><%= link_to 'Register', new_user_registration_path %> </span>
+								<span><%= link_to 'Log in', new_user_session_path %> or
+								<%= link_to 'Register', new_user_registration_path %> </span>
 							<% end -%>
 						</div>
 					</div><!-- #access -->

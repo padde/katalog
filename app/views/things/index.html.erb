@@ -1,14 +1,17 @@
 <h1>Things</h1>
 
 <% @things.each do |thing| %>
-<p>
-	<%= link_to thing.title, thing %><br />
-	<%= link_to image_tag(thing.images.first.data.url(:thumb)), thing unless thing.images.blank? %>
-</p>
+	<p>
+		<%= link_to thing.title, thing %>
+		<% unless thing.images.blank? %>
+			<br />
+			<%= link_to image_tag(thing.images.first.data.url(:thumb)), thing %>
+		<% end -%>
+	</p>
 <% end %>
 
-<% if user_signed_in? -%>
 <div id="controls">
-	<%= link_to 'New thing', new_thing_path %>
+	<% if can? :create, Thing -%>
+		<%= link_to 'New thing', new_thing_path %>
+	<% end -%>
 </div>
-<% end -%>

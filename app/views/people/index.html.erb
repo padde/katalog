@@ -3,9 +3,3 @@
 <% @people.each do |person| %>
 	<%= link_to person.full_name, person %><br />
 <% end %>
-
-<% if user_signed_in? -%>
-<div id="controls">
-	<%= link_to 'Show only my identities', identities_path %>
-</div>
-<% end -%>

@@ -3,31 +3,38 @@
 </h1>
 
 <p>
-	<%= @thing.description %>
+	<%=simple_format raw(@thing.description) %>
 </p>
 
 <p>
 	<h2>Credits</h2>
-	<% @thing.credits.each do |credit| -%>
-		<%= credit.role.capitalize %> — <%= link_to credit.person.full_name, person_path(credit.person) %><br />
+	<% for_unique_people @thing do |person, role| -%>
+		<%= role %> — <%= link_to person.full_name, person_path(person) %><br />
 	<% end -%>
 </p>
 
+<% unless @thing.images.blank? %>
 <p>
 	<h2>Gallery</h2>
 	<% @thing.images.each do |image| -%>
-		<%= link_to image_tag(image.data.url(:thumb)), image.data.url(:large), :rel => 'fancybox' %>
+		<%= link_to image_tag(image.data.url(:thumb), :alt => image.description), image.data.url(:large), :rel => 'fancybox' %>
 	<% end -%>
 </p>
+<% end -%>
 
+<% unless @thing.license.blank? %>
 <p>
 	<h2>License</h2>
 	<%= @thing.license %>
 </p>
-
-<% if user_signed_in? -%>
-<div id="controls">
-	<%= link_to 'Edit', edit_thing_path(@thing) %>
-	<%= link_to 'Delete', @thing, :confirm => 'Are you sure?', :method => :delete %>
-</div>
 <% end -%>
+
+
+<div id="controls">
+	<% if can? :update, @thing -%>
+		<%= link_to 'Edit', edit_thing_path(@thing) %>
+	<% end -%>
+	<% if can? :destroy, @thing -%>
+		<%= link_to 'Delete', @thing, :confirm => 'Are you sure?', :method => :delete %>
+	<% end -%>
+</div>

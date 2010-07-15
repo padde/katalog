@@ -6,15 +6,10 @@
 
 <p>
 	<h2>Credits</h2>
-	<% @person.credits.each do |credit| -%>
-	  <%= link_to credit.thing.title, thing_path(credit.thing.id) %> (as <%= credit.role.capitalize %>)<br />
+	<% for_unique_credits @person do |thing, roles| -%>
+		<%= link_to thing.title, thing_path(thing.id) %>
+		(as <%= roles %>)<br />
 	<% end -%>
 </p>
 
-<% if user_signed_in? -%>
-	<div id="controls">
-		<%= link_to 'Edit', edit_person_path(@person) %>
-		<%= link_to 'Delete', @person, :confirm => 'Are you sure?', :method => :delete %>
-	</div>
-<% end -%>
 

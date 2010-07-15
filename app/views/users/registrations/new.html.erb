@@ -1,20 +1,11 @@
 <h1>Register</h1>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%#= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+<%= form_for @user, :as => :user, :url => registration_path(resource_name) do |f| %>
   <%= devise_error_messages! %>
-  <%= f.fields_for :people do |person_form| -%>
-    <div class="field">
-      <%= person_form.label :first_name %><br />
-      <%= person_form.text_field :first_name %>
-    </div>
-    <div class="field">
-      <%= person_form.label :last_name %><br />
-      <%= person_form.text_field :last_name %>
-    </div>
-    <div class="field">
-      <%= person_form.label :motto %><br />
-      <%= person_form.text_field :motto %>
-    </div>
+
+  <%= f.fields_for :person do |builder| -%>
+	<%= render 'person_fields', :f => builder %>
   <% end -%>
 
   <div class="field">

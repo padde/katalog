@@ -6,6 +6,8 @@ class Person < ActiveRecord::Base
   
   validates_presence_of :first_name, :last_name
   
+  attr_accessible :first_name, :last_name
+  
   scope :asc, order('last_name')
   scope :by_user, lambda { |user| where( :user_id.eq % user.id ) }
   

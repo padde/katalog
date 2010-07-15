@@ -14,11 +14,16 @@ gem 'devise', '>= 1.1.rc2'
 
 # Use Less CSS + More (Less Rails Wrapper) for fancy CSS stuff
 gem 'less'
-gem 'more'
+# gem 'more' # more is installed as plugin
 
 # Use Paperclip for image uploads
 gem 'paperclip'
 
 # Use MetaWhere to ban SQL from source code 
 # Future.where :sql.not_in => ['code']
-gem "meta_where"
+gem 'meta_where'
+
+# Use CanCan for managing Permissions
+gem 'cancan'
+
+gem 'ruby-debug'

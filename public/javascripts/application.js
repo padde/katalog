@@ -1,8 +1,8 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 function remove_fields(link) {
-  $(link).prev("input[type=hidden]").val("1");
-  $(link).closest(".fields").hide();
+  $(link).prev("input[type=hidden]").val(1);
+  $(link).closest(".fields").slideUp();
 }
 
 function add_fields(link, association, content) {
@@ -13,13 +13,16 @@ function add_fields(link, association, content) {
 
 $(document).ready(function() {
   
+  // enable fancybox
   $("a[rel=fancybox]").fancybox({
-    'transitionIn'  : 'none',
-    'transitionOut' : 'none',
+    'transitionIn'  : 'elastic',
+    'transitionOut' : 'elastic',
+    'speedIn'       : 300,
+    'speedOut'      : 300,
+    'titleShow'     : false,
     'titlePosition' : 'over',
     'titleFormat'   : function(title, currentArray, currentIndex, currentOpts) {
-      return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' +
-      currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+      return '<span id="fancybox-title-over">' + title + '</span>';
     }
   });
   

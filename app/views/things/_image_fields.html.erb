@@ -5,6 +5,12 @@
     <%= f.label :data, 'Image — ' %>
     <%= f.file_field :data %>
   <% end -%>
+  <br />
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br />
+  <%= f.label :description %>
+  <%= f.text_field :description %>
 
   <%= link_to_remove_fields 'remove', f %>
 </p>

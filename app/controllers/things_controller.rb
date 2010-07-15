@@ -1,11 +1,16 @@
 class ThingsController < ApplicationController
-  before_filter :authenticate_user! #, :except => [:show, :index]
+  before_filter :authenticate_user!, :except => [:show, :index]
+  load_and_authorize_resource
   
   # GET /things
   # GET /things.xml
   def index
-    @things = Thing.all
-
+    if params[:own]
+      @things = Thing.by_user(current_user).asc
+    else
+      @things = Thing.asc
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @things }
@@ -15,8 +20,6 @@ class ThingsController < ApplicationController
   # GET /things/1
   # GET /things/1.xml
   def show
-    @thing = Thing.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @thing }
@@ -26,10 +29,8 @@ class ThingsController < ApplicationController
   # GET /things/new
   # GET /things/new.xml
   def new
-    @thing = Thing.new
-    if user_signed_in?
-      @thing.credits.build(:person => current_user.people.first)
-    end
+    @thing.credits.build(:person => current_user.person)
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @thing }
@@ -38,14 +39,13 @@ class ThingsController < ApplicationController
 
   # GET /things/1/edit
   def edit
-    @thing = Thing.find(params[:id])
   end
 
   # POST /things
   # POST /things.xml
   def create
-    @thing = Thing.new(params[:thing])
-
+    @thing.user = current_user
+    
     respond_to do |format|
       if @thing.save
         format.html { redirect_to(@thing, :notice => 'Thing was successfully created.') }
@@ -61,7 +61,7 @@ class ThingsController < ApplicationController
   # PUT /things/1.xml
   def update
     @thing = Thing.find(params[:id], :include => [:credits,:images])
-
+    
     respond_to do |format|
       if @thing.update_attributes(params[:thing])
         format.html { redirect_to(@thing, :notice => 'Thing was successfully updated.') }
@@ -76,7 +76,6 @@ class ThingsController < ApplicationController
   # DELETE /things/1
   # DELETE /things/1.xml
   def destroy
-    @thing = Thing.find(params[:id])
     @thing.destroy
 
     respond_to do |format|
