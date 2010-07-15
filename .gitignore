@@ -2,6 +2,7 @@ config/database.yml
 .DS_Store
 doc/**/*
 *~
+*.swp
 .bundle
 db/*.sqlite3
 log/*.log
