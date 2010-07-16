@@ -355,6 +355,7 @@ p { margin-bottom: 1em; }
   padding: 0.5em;
   background-color: #eeeeee;
   display: block;
+  white-space: pre;
 }
 input, textarea { font-size: 16px; }
 input[type=submit], input[type=checkbox] {
