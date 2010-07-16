@@ -3,4 +3,6 @@ class Credit < ActiveRecord::Base
   belongs_to :thing
   
   validates_presence_of :person, :role
+  
+  attr_accessible :person_id, :role
 end

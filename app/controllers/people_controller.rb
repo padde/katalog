@@ -1,5 +1,5 @@
 class PeopleController < ApplicationController
-  # before_filter :authenticate_user!, :except => [:show, :index]
+  before_filter :authenticate_user!, :except => [:show, :index]
   load_and_authorize_resource
   
   # GET /people

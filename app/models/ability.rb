@@ -8,12 +8,19 @@ class Ability
     # logged in users
     if user
       can :create, Thing
-      
       can [:update,:destroy], Thing do |thing|
-        user.owns? thing
+         thing.user == user
       end
       
-      can :update, User
+      can :create, Person
+      
+      can :create, Group
+      can :update, Group do |group|
+        group.people.include? user.person
+      end
+      can [:update, :destroy], Group do |group|
+        group.user == user
+      end
     end                   
   end
 end

@@ -1,5 +1,5 @@
 <h1>People</h1>
 
-<% @people.each do |person| %>
-	<%= link_to person.full_name, person %><br />
-<% end %>
+<p>
+<%= comma_separated_links_for @people %>
+</p>

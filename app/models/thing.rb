@@ -11,7 +11,7 @@ class Thing < ActiveRecord::Base
   validates_presence_of :title, :description, :credits
   validates_associated :credits, :images
   
-  attr_accessible :title, :description, :credits_attributes, :images_attributes, :images, :license
+  attr_accessible :title, :description, :credits_attributes, :images_attributes, :license
   
   scope :asc, order('title')
 end

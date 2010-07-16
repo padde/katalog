@@ -194,7 +194,7 @@ p {
 	.paper-light;
 }
 
-#flash_notice, #flash_alert, .errorExplanation {
+#flash_notice, #flash_alert, #error_explanation {
 	margin: 0 0 20px 0;
 	padding: 10px;
 	width: 560px;
@@ -208,13 +208,19 @@ p {
 	border: 1px solid #4A992A;
 }
 
-#flash_alert, .errorExplanation {
+#flash_alert, #error_explanation {
 	background: #F2998B;
 	border: 1px solid #DA2900;
 }
 
-.fieldWithErrors input {
-	border: 2px solid #DA2900;
+.field_with_errors {
+  input {
+	  border: 2px solid #DA2900;
+  }
+}
+
+.field {
+  margin-bottom: 1em;
 }
 
 #content {

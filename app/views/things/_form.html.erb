@@ -20,15 +20,17 @@
     <%= f.text_area :description %>
   </div>
 
+  Credits<br />
   <%= f.fields_for :credits do |builder| -%>
     <%= render 'credit_fields', :f => builder %>
   <% end -%>
   <p><%= link_to_add_fields 'add credit', f, :credits %></p>
   
+  Images<br />
   <%= f.fields_for :images do |builder| -%>
-    <%= render 'image_fields', :f => builder %>
+    <%= render 'shared/image_fields', :f => builder %>
   <% end -%>
-  <p><%= link_to_add_fields 'add image', f, :images %></p>
+  <p><%= link_to_add_fields 'add image', f, :images, :shared => true %></p>
 
   <div class="field">
     <%= f.label :license %><br />

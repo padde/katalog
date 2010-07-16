@@ -9,6 +9,7 @@ function add_fields(link, association, content) {
   var new_id = new Date().getTime();
   var regexp = new RegExp("new_" + association, "g")
   $(link).parent().before(content.replace(regexp, new_id));
+  $(link).next(".fields").slideUp();
 }
 
 $(document).ready(function() {
@@ -28,7 +29,5 @@ $(document).ready(function() {
       return '<span id="fancybox-title-over">' + title + '</span>';
     }
   });
-  
-  $("#fancybox-title-over").hide();
   
 });

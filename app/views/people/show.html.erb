@@ -4,12 +4,21 @@
 	<i><%= @person.motto %></i>
 </p>
 
+<% if @person.credits.any? -%>
+<h2>Credits</h2>
 <p>
-	<h2>Credits</h2>
 	<% for_unique_credits @person do |thing, roles| -%>
-		<%= link_to thing.title, thing_path(thing.id) %>
+		<%= link_to thing.title, thing %>
 		(as <%= roles %>)<br />
 	<% end -%>
 </p>
+<% end -%>
 
-
+<% if @person.groups.any? -%>
+<h2>Groups</h2>
+<p>
+	<% @person.groups.each do |group| -%>
+		<%= link_to group.name, group %><br />
+	<% end -%>
+</p>
+<% end -%>

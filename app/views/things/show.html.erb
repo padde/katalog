@@ -4,27 +4,25 @@
 
 <%=format_user_text @thing.description %>
 
+<h2>Credits</h2>
 <p>
-	<h2>Credits</h2>
 	<% for_unique_people @thing do |person, role| -%>
 		<%= role %> — <%= link_to person.full_name, person_path(person) %><br />
 	<% end -%>
 </p>
 
-<% unless @thing.images.blank? %>
+<% if @thing.images.any? -%>
+<h2>Gallery</h2>
 <p>
-	<h2>Gallery</h2>
 	<% @thing.images.each do |image| -%>
 		<%= link_to image_tag(image.data.url(:thumb), :alt => "<b>#{image.title}</b><br />#{image.description}"), image.data.url(:large), :rel => 'fancybox' %>
 	<% end -%>
 </p>
 <% end -%>
 
-<% unless @thing.license.blank? %>
-<p>
-	<h2>License</h2>
-	<%= @thing.license %>
-</p>
+<% if @thing.license.any? -%>
+<h2>License</h2>
+<p><%= @thing.license %></p>
 <% end -%>
 
 

@@ -313,7 +313,7 @@ p { margin-bottom: 1em; }
   font-weight: bold;
   background-color: #f8f8f8;
 }
-#flash_notice, #flash_alert, .errorExplanation {
+#flash_notice, #flash_alert, #error_explanation {
   margin: 0 0 20px 0;
   padding: 10px;
   width: 560px;
@@ -325,11 +325,12 @@ p { margin-bottom: 1em; }
   background: #99cc66;
   border: 1px solid #4a992a;
 }
-#flash_alert, .errorExplanation {
+#flash_alert, #error_explanation {
   background: #f2998b;
   border: 1px solid #da2900;
 }
-.fieldWithErrors input { border: 2px solid #da2900; }
+.field_with_errors input { border: 2px solid #da2900; }
+.field { margin-bottom: 1em; }
 #content {
   padding-left: 32px;
   padding-bottom: 46px;

@@ -1,0 +1,11 @@
+<h1>Groups</h1>
+
+<% @groups.each do |group| %>
+  <%= link_to group.name, group %><br />
+<% end %>
+
+<div id="controls">
+	<% if can? :create, Group -%>
+		<%= link_to 'New Group', new_group_path %>
+	<% end -%>
+</div>

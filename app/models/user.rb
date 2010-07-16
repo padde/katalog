@@ -9,8 +9,7 @@ class User < ActiveRecord::Base
   
   attr_accessible :email, :password, :password_confirmation, :username, :person_attributes
   
-  validates_uniqueness_of :username
-  validates_presence_of   :username
+  validates :username, :presence => true, :uniqueness => true
   
   # Enable Login with username OR email
   def self.find_for_authentication(conditions={})
@@ -20,8 +19,12 @@ class User < ActiveRecord::Base
     super
   end
   
-  def owns?(thing)
+  def owns_thing? (thing)
     thing.user == self
+  end
+  
+  def owns_group? (group)
+    group.members.include? self.person
   end
   
   def full_name

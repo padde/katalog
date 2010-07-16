@@ -31,3 +31,6 @@ gem 'oembed_links'
 
 # Use redcloth for textilize method
 gem 'RedCloth'
+
+# Use debugger
+gem 'ruby-debug'
