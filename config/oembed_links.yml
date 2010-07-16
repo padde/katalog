@@ -3,7 +3,7 @@
 
 :providers:
   :oohembed: "http://oohembed.com/oohembed/"
-  :vimeo: "http://www.vimeo.com/api/oembed.{format}?width=500&color=eeeeee"
+  :vimeo: "http://www.vimeo.com/api/oembed.{format}?width=580&color=eeeeee"
   :hulu: "http://www.hulu.com/api/oembed.{format}"
   :flickr: "http://www.flickr.com/services/oembed"
   :viddler: "http://lab.viddler.com/services/oembed/"

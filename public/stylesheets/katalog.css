@@ -345,6 +345,17 @@ p { margin-bottom: 1em; }
   padding-right: 0.5em;
 }
 #content-side { padding-top: 46px; }
+#content .footnote {
+  font-size: 0.8em;
+  line-height: 1em;
+}
+#content code {
+  font-size: 0.8em;
+  line-height: 1.5em;
+  padding: 0.5em;
+  background-color: #eeeeee;
+  display: block;
+}
 input, textarea { font-size: 16px; }
 input[type=submit], input[type=checkbox] {
   width: auto;

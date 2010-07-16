@@ -11,12 +11,10 @@
 	<% end -%>
 </p>
 
-<% if @thing.images.any? -%>
-<h2>Gallery</h2>
+<% if @thing.tags.any? -%>
+<h2>Tags</h2>
 <p>
-	<% @thing.images.each do |image| -%>
-		<%= link_to image_tag(image.data.url(:thumb), :alt => "<b>#{image.title}</b><br />#{image.description}"), image.data.url(:large), :rel => 'fancybox' %>
-	<% end -%>
+	<%= @thing.tag_list %>
 </p>
 <% end -%>
 
@@ -24,7 +22,6 @@
 <h2>License</h2>
 <p><%= @thing.license %></p>
 <% end -%>
-
 
 <div id="controls">
 	<% if can? :update, @thing -%>
