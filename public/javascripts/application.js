@@ -22,7 +22,7 @@ $(document).ready(function() {
     'speedOut'      : 300,
     'overlayOpacity': 0.5,
     'overlayColor'  : '#000',
-    'showCloseButton' : false,
+    'showCloseButton' : true,
     'titleShow'     : false,
     'titlePosition' : 'inside',
     'titleFormat'   : function(title, currentArray, currentIndex, currentOpts) {
