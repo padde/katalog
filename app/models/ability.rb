@@ -16,11 +16,13 @@ class Ability
       
       can :create, Group
       can :update, Group do |group|
-        group.people.include? user.person
-      end
-      can [:update, :destroy], Group do |group|
+        group.people.include? user.person or
         group.user == user
       end
+      can :destroy, Group do |group|
+        group.user == user
+      end
+      
     end                   
   end
 end
