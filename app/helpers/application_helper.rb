@@ -17,10 +17,6 @@ module ApplicationHelper
   end
   
   def format_user_text (string)
-    begin
-      OEmbed.transform(textilize(string, :filter_html))
-    rescue
-      textilize(string, :filter_html)
-    end
+      textilize string, :filter_html
   end
 end
