@@ -20,18 +20,6 @@
 </p>
 <% end -%>
 
-<% if @thing.tags.any? -%>
-<h2>Tags</h2>
-<p>
-	<%= @thing.tag_list %>
-</p>
-<% end -%>
-
-<% if @thing.license.any? -%>
-<h2>License</h2>
-<p><%= @thing.license %></p>
-<% end -%>
-
 <div id="controls">
 	<% if can? :update, @thing -%>
 		<%= link_to 'Edit', edit_thing_path(@thing) %>

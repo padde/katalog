@@ -1,6 +1,4 @@
 class Thing < ActiveRecord::Base
-  acts_as_taggable
-  
   has_many :credits, :dependent => :destroy
   has_many :people, :through => :credits
   accepts_nested_attributes_for :credits, :allow_destroy => true
@@ -13,7 +11,7 @@ class Thing < ActiveRecord::Base
   validates_presence_of :title, :description, :credits
   validates_associated :credits, :images
   
-  attr_accessible :title, :description, :credits_attributes, :images_attributes, :license, :tag_list
+  attr_accessible :title, :description, :credits_attributes, :images_attributes, :license
   
   scope :asc, order('title')
 end
