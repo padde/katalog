@@ -27,6 +27,10 @@ class User < ActiveRecord::Base
     group.members.include? self.person
   end
   
+  def admin?
+    self.admin
+  end
+  
   def full_name
     "#{first_name} #{last_name}"
   end
