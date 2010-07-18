@@ -1,6 +1,6 @@
 class AddUserIdToPeople < ActiveRecord::Migration
   def self.up
-    add_column :people, :user_id, :string
+    add_column :people, :user_id, :integer
   end
 
   def self.down
