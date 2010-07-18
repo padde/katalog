@@ -275,7 +275,10 @@ p { margin-bottom: 1em; }
   padding-top: 3px;
   color: #444444;
 }
-#site-title a { text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5); }
+#site-title a {
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+}
 #site-title a:hover {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0);
   color: black;
@@ -347,8 +350,11 @@ p { margin-bottom: 1em; }
 #content-side { padding-top: 46px; }
 #content .footnote {
   font-size: 0.8em;
-  line-height: 1em;
+  line-height: 1.2em;
+  margin-bottom: 0.7em;
+  color: #888888;
 }
+#content .footnote a { text-decoration: none; }
 #content code {
   font-size: 0.8em;
   line-height: 1.5em;
