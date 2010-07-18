@@ -15,7 +15,7 @@
 <h2>Gallery</h2>
 <p>
 	<% @thing.images.each do |image| -%>
-		<%= link_to image_tag(image.data.url(:thumb), :alt => "<b>#{image.title}</b><br />#{image.description}"), image.data.url(:large), :rel => 'fancybox' %>
+		<%= link_to image_tag(image.data.url(:thumb), :alt => "<b>#{image.title}</b><br />#{image.description}", :rel => 'fancybox'), image.data.url(:large), :rel => 'fancybox' %>
 	<% end -%>
 </p>
 <% end -%>

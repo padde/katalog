@@ -1,6 +1,6 @@
 <p class="fields">
   <% unless f.object.new_record? -%>
-    <%= image_tag f.object.data.url(:thumb) %>
+    <%= image_tag f.object.data.url(:thumb), :rel => 'fancybox' %>
   <% else -%>
     <%= f.label :data, 'Image — ' %>
     <%= f.file_field :data %>

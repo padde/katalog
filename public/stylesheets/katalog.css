@@ -363,6 +363,8 @@ p { margin-bottom: 1em; }
   display: block;
   white-space: pre;
 }
+#content img { max-width: 580px; }
+#content img[rel=fancybox] { width: auto; }
 input, textarea { font-size: 16px; }
 input[type=submit], input[type=checkbox] {
   width: auto;

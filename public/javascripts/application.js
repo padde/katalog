@@ -1,10 +1,14 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+///////////////// DYNAMIC FIELDS /////////////////
+
+// function to dynamically remove fields from forms,
+// used by ApplicationHelper::link_to_remove_fields
 function remove_fields(link) {
   $(link).prev("input[type=hidden]").val(1);
   $(link).closest(".fields").slideUp();
 }
 
+// function to dynamically add fields to forms,
+// used by ApplicationHelper::link_to_add_fields
 function add_fields(link, association, content) {
   var new_id = new Date().getTime();
   var regexp = new RegExp("new_" + association, "g")
@@ -15,21 +19,38 @@ function add_fields(link, association, content) {
 
 $(document).ready(function() {
   
-  // enable fancybox
-  $("a[rel=fancybox]").fancybox({
-    'transitionIn'  : 'elastic',
-    'transitionOut' : 'elastic',
-    'speedIn'       : 300,
-    'speedOut'      : 300,
-    'overlayOpacity': 0.5,
-    'overlayColor'  : '#000',
-    'showCloseButton' : true,
-    'titleShow'     : false,
-    'titlePosition' : 'inside',
-    'titleFormat'   : function(title, currentArray, currentIndex, currentOpts) {
+  ///////////////// FANCYBOX /////////////////
+  
+  // settings for fancybox
+  var fancybox_properties = {
+    'transitionIn'       : 'elastic',
+    'transitionOut'      : 'elastic',
+    'speedIn'            : 300,
+    'speedOut'           : 300,
+    'overlayOpacity'     : 0.5,
+    'overlayColor'       : '#000',
+    'showCloseButton'    : true,
+    'hideOnContentClick' : true,
+    'titleShow'          : false,
+    'titlePosition'      : 'inside',
+    'titleFormat'        : function(title, currentArray, currentIndex, currentOpts) {
       return '<span id="fancybox-title-over">' + title + '</span>';
     }
-  });
+  };
+  
+  // enable fancybox for images in gallery
+  $("a[rel=fancybox]").fancybox(fancybox_properties);
+  
+  // // settings only for linked images in the content
+  // fancybox_properties_for_content = fancybox_properties;
+  // fancybox_properties_for_content['hideOnContentClick'] = true;
+  // 
+  // // enable fancybox for images enclosed in links,
+  // // thus images in description text. 
+  // $("#content a img").parent().not('a[rel=fancybox]').fancybox(fancybox_properties_for_content);
+  
+  
+  ///////////////// OEMBED /////////////////
   
   // enable oEmbed  
   $('#content a').oembed(null, {
