@@ -32,6 +32,19 @@ $(document).ready(function() {
   });
   
   // enable oEmbed  
-  $('#content a').oembed();
+  $('#content a').oembed(null, {
+    embedMethod: "append",
+    maxWidth: 580
+  });
+  
+  // oembed fix for safari (videos do not work,
+  // original links still redirect to provider page
+  // when clicking on a video to play it)
+  $('#content a[href^=http://youtube.com], ' + 
+    '#content a[href^=http://www.youtube.com], ' + 
+    '#content a[href^=http://vimeo.com], ' +
+    '#content a[href^=http://www.vimeo.com]').click(
+      function() { return false; }
+  );
   
 });
