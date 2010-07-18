@@ -12,6 +12,7 @@ function add_fields(link, association, content) {
   $(link).next(".fields").slideUp();
 }
 
+
 $(document).ready(function() {
   
   // enable fancybox
@@ -29,5 +30,8 @@ $(document).ready(function() {
       return '<span id="fancybox-title-over">' + title + '</span>';
     }
   });
+  
+  // enable oEmbed  
+  $('#content a').oembed();
   
 });
