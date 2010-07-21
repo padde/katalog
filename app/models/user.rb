@@ -12,11 +12,9 @@ class User < ActiveRecord::Base
   validates :username, :presence => true, :uniqueness => true
   
   # Enable Login with username OR email
-  def self.find_for_authentication(conditions={})
-    unless conditions[:email] =~ /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i # email regex
-      conditions[:username] = conditions.delete("email")
-    end
-    super
+  def self.find_for_database_authentication(conditions={})
+    self.where(:username.matches % conditions[:email]).limit(1).first ||
+    self.where(:email.eq % conditions[:email]).limit(1).first
   end
   
   def owns_thing? (thing)

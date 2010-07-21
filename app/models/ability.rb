@@ -14,7 +14,7 @@ class Ability
       can :create, Thing
       can [:update,:destroy], Thing do |thing|
         # things they own
-         thing.user == user
+        thing.user == user
       end
       
       can :create, Person
@@ -35,11 +35,10 @@ class Ability
         group.user == user
       end
       
-    end
-    
-    # admins
-    if user.admin?
-      can :manage, :all
+      # admins
+      if user.admin?
+        can :manage, :all
+      end
     end
   end
 end
