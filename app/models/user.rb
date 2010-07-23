@@ -13,8 +13,9 @@ class User < ActiveRecord::Base
   
   # Enable Login with username OR email
   def self.find_for_database_authentication(conditions={})
-    self.where(:username.matches % conditions[:email]).limit(1).first ||
-    self.where(:email.eq % conditions[:email]).limit(1).first
+    input = conditions[:email].gsub(/[%_]/,'')
+    self.where(:username.matches % input).limit(1).first ||
+    self.where(:email.matches % input).limit(1).first
   end
   
   def owns_thing? (thing)
