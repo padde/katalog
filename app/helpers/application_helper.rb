@@ -17,6 +17,6 @@ module ApplicationHelper
   end
   
   def format_user_text (string)
-      textilize string, :filter_html
+      textilize( sanitize(string) ).html_safe
   end
 end
