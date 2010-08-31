@@ -15,7 +15,7 @@ module PeopleHelper
   end
   
   def comma_separated_links_for (people)
-    raw people.map{ |p| link_to p.full_name, p }.join(', ')
+    people.map{ |p| link_to h(p.full_name), p }.join(', ').html_safe
   end
   
 end
