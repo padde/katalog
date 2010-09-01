@@ -1,8 +1,6 @@
 module PeopleHelper
   
-  def for_unique_credits( person, opts = {}, &block )
-    opts = { :join => ", " }.merge! opts
-    
+  def for_unique_credits( person, &block )
     person.things.uniq.each do |thing|
       credits = person.credits.where(:thing_id.eq % thing.id)
       roles = credits.map(&:role).to_sentence
