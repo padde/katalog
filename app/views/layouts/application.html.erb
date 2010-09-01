@@ -37,7 +37,7 @@
 								</li>
 							</ul>
 						</div>
-						<div class="user grid_5 alpha">
+						<div class="user grid_5 omega ">
 							<% if user_signed_in? -%>
 								<span>Hello, <span class="username"><%= link_to current_user.username, edit_user_registration_path %>!</span>
 								<%= link_to 'Not You?', destroy_user_session_path %></span> 
@@ -51,7 +51,7 @@
 			</div><!-- #header -->
 
 			<div id="main" class="grid_16">
-				<div id="container" class="grid_16 alpha">
+				<div id="container" class="grid_16 alpha omega">
 					<div id="content" class="grid_10 alpha">
 									
 						<% flash.each do |name, msg| -%>
