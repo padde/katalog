@@ -1,25 +1,11 @@
-<h1>Listing contexts</h1>
+<h1>Context</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Parent</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<ul>
+  <%= render 'context', :collection => Context.root_elements %>
+</ul>
 
-<% @contexts.each do |context| %>
-  <tr>
-    <td><%= context.name %></td>
-    <td><%= context.parent_id %></td>
-    <td><%= link_to 'Show', context %></td>
-    <td><%= link_to 'Edit', edit_context_path(context) %></td>
-    <td><%= link_to 'Destroy', context, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Context', new_context_path %>
+<div id="controls">
+	<% if can? :create, Context -%>
+		<%= link_to 'New Context', new_context_path %>
+	<% end -%>
+</div>

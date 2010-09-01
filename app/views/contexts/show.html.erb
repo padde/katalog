@@ -1,15 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @context.name %>
-</p>
+<h1><%= @context.name %></h1>
 
 <p>
   <b>Parent:</b>
-  <%= @context.parent_id %>
+  <% if @context.parent -%>
+    <%= @context.parent.name %>
+  <% else -%>
+    none
+  <% end -%>
 </p>
 
-
-<%= link_to 'Edit', edit_context_path(@context) %> |
-<%= link_to 'Back', contexts_path %>
+<div id="controls">
+	<% if can? :update, @context -%>
+		<%= link_to 'Edit', edit_context_path(@context) %>
+	<% end -%>
+	<% if can? :destroy, @context -%>
+		<%= link_to 'Delete', @context, :confirm => 'Are you sure?', :method => :delete %>
+	<% end -%>
+</div>

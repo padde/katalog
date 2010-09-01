@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :parent_id %><br />
-    <%= f.text_field :parent_id %>
+    <%= f.collection_select :parent_id, @contexts, :id, :name, :include_blank => true %>
   </div>
   <div class="actions">
     <%= f.submit %>
