@@ -18,6 +18,9 @@
   <div class="field">
     <%= f.label :parent_id %><br />
     <ul>
+      <li>
+        <%= f.radio_button 'parent_id', nil %> [no Parent]
+      </li>
       <%= render :partial    => 'kontext_options',
                  :collection => Kontext.roots,
                  :locals     => { :f => f }     %>
