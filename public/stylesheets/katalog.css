@@ -239,7 +239,9 @@ a:hover { color: black; }
 h1 {
   font-size: 30px;
   margin-bottom: 0.6em;
+  font-weight: bold;
 }
+h2 { font-size: 22px; }
 p { margin-bottom: 1em; }
 #wrapper {
   height: auto;
