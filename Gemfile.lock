@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/parasew/acts_as_tree.git
+  revision: ed52495
+  specs:
+    acts_as_tree (1.2.3)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -101,6 +107,7 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth
+  acts_as_tree (>= 1.2.3)!
   cancan
   devise (>= 1.1.rc2)
   less

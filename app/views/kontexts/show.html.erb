@@ -1,0 +1,19 @@
+<h1><%= @kontext.name %></h1>
+
+<p>
+  <b>Parent:</b>
+  <% if @kontext.parent -%>
+    <%= @kontext.parent.name %>
+  <% else -%>
+    none
+  <% end -%>
+</p>
+
+<div id="controls">
+	<% if can? :update, @kontext -%>
+		<%= link_to 'Edit', edit_kontext_path(@kontext) %>
+	<% end -%>
+	<% if can? :destroy, @kontext -%>
+		<%= link_to 'Delete', @kontext, :confirm => 'Are you sure?', :method => :delete %>
+	<% end -%>
+</div>

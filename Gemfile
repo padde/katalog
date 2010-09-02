@@ -31,3 +31,6 @@ gem 'RedCloth'
 
 # Use debugger
 gem 'ruby-debug'
+
+# Use acts_as_tree
+gem 'acts_as_tree', '>= 1.2.3', :git => 'git://github.com/parasew/acts_as_tree.git'
