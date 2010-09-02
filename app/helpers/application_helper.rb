@@ -19,4 +19,10 @@ module ApplicationHelper
   def format_user_text (string)
       textilize( sanitize(string) ).html_safe
   end
+  
+  def comma_separated_links_for (records, method)
+    records.map do |record|
+      link_to record.send(method), record
+    end.join(', ').html_safe
+  end
 end

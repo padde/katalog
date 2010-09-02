@@ -23,9 +23,7 @@
 <% if @thing.kontexts.any? -%>
 <h2>Kontext</h2>
 <p>
-	<% @thing.kontexts.each do |kontext| -%>
-		<%= link_to kontext.name, kontext %><br />
-	<% end -%>
+	<%= comma_separated_links_for @thing.kontexts, :name %>
 </p>
 <% end -%>
 
