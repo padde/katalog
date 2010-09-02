@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100901225829) do
+ActiveRecord::Schema.define(:version => 20100902175710) do
 
   create_table "credits", :force => true do |t|
     t.integer  "person_id"
@@ -40,6 +40,14 @@ ActiveRecord::Schema.define(:version => 20100901225829) do
     t.datetime "updated_at"
     t.string   "title"
     t.text     "description"
+  end
+
+  create_table "kontext_links", :force => true do |t|
+    t.integer  "kontext_id"
+    t.integer  "kontextable_id"
+    t.string   "kontextable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "kontexts", :force => true do |t|
