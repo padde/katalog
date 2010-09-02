@@ -1,0 +1,17 @@
+<li>
+  <%= check_box_tag :kontext_ids, kontext.id,
+    @thing.kontexts.include?(kontext),
+    :id => "thing_kontext_ids_#{kontext.id}",
+    :name => 'thing[kontext_ids][]' %>
+    
+  <%= f.label "kontext_ids_#{kontext.id}", kontext.name %><br />
+  
+  <% if kontext.children.any? -%>
+    <ul>
+      <%= render :partial    => 'kontext_checkboxes',
+                 :collection => kontext.children,
+                 :as         => :kontext,
+                 :locals     => { :f => f } %>
+    </ul>
+  <% end -%>
+</li>

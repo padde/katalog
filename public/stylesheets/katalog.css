@@ -366,7 +366,7 @@ p { margin-bottom: 1em; }
 #content img { max-width: 580px; }
 #content img[rel=fancybox] { width: auto; }
 input, textarea { font-size: 16px; }
-input[type=submit], input[type=checkbox] {
+input[type=submit] {
   width: auto;
   margin-top: 20px;
 }

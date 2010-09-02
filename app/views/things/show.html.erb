@@ -20,6 +20,15 @@
 </p>
 <% end -%>
 
+<% if @thing.kontexts.any? -%>
+<h2>Kontext</h2>
+<p>
+	<% @thing.kontexts.each do |kontext| -%>
+		<%= link_to kontext.name, kontext %><br />
+	<% end -%>
+</p>
+<% end -%>
+
 <div id="controls">
 	<% if can? :update, @thing -%>
 		<%= link_to 'Edit', edit_thing_path(@thing) %>

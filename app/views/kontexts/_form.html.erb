@@ -16,14 +16,15 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :parent_id %><br />
+    Parent<br />
     <ul>
       <li>
         <%= f.radio_button 'parent_id', nil %> [no Parent]
       </li>
       <%= render :partial    => 'kontext_options',
                  :collection => Kontext.roots,
-                 :locals     => { :f => f }     %>
+                 :as         => :kontext,
+                 :locals     => { :f => f } %>
     </ul>
   </div>
   <div class="actions">
