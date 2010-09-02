@@ -31,6 +31,7 @@ class ThingsController < ApplicationController
   end
   
   def update
+    params[:thing][:kontext_ids] ||= []
     @thing = Thing.find(params[:id], :include => [:credits,:images])
     
     if @thing.update_attributes(params[:thing])
