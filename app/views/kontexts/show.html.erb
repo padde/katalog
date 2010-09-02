@@ -1,11 +1,33 @@
 <h1><%= @kontext.name %></h1>
 
+<h2>Things in this kontext</h2>
 <p>
-  <b>Parent:</b>
+  <% if @kontext.things.any? %>
+    <% @kontext.things.each do |thing| -%>
+      <%= link_to thing.title, thing %>
+    <% end -%>
+  <% else -%>
+    No things.
+  <% end -%>
+</p>
+
+<h2>Parent</h2>
+<p>
   <% if @kontext.parent -%>
     <%= @kontext.parent.name %>
   <% else -%>
-    none
+    No parents.
+  <% end -%>
+</p>
+
+<h2>Children</h2>
+<p>
+  <% if @kontext.children -%>
+    <ul>
+      <%= render :partial => 'kontext', :collection => @kontext.children %>
+    </ul>
+  <% else -%>
+    No child elements.
   <% end -%>
 </p>
 

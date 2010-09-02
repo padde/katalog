@@ -1,5 +1,5 @@
 <li>
-  <%= kontext.name %>
+  <%= link_to kontext.name, kontext %>
   <% if kontext.children.any? -%>
     <ul>
       <%= render :partial => 'kontext', :collection => kontext.children %>
