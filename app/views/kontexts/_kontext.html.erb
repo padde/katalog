@@ -1,0 +1,8 @@
+<li>
+  <%= kontext.name %>
+  <% if kontext.children.any? -%>
+    <ul>
+      <%= render :partial => 'kontext', :collection => kontext.children %>
+    </ul>
+  <% end -%>
+</li>

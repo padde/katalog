@@ -3,7 +3,7 @@ Katalog::Application.routes.draw do |map|
     :path_names => { :sign_up => 'register', :sign_in => 'log_in' },
     :controllers => { :registrations => "users/registrations" }
   
-  resources :things, :people, :groups, :contexts
+  resources :things, :people, :groups, :kontexts
   
   #match :identities, :to => 'people#identities'
   

@@ -1,0 +1,28 @@
+<%= form_for(@kontext) do |f| %>
+  <% if @kontext.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@kontext.errors.count, "error") %> prohibited this kontext from being saved:</h2>
+
+      <ul>
+      <% @kontext.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :parent_id %><br />
+    <%#= f.collection_select :parent_id, @kontexts, :id, :name, :include_blank => true %>
+    <ul>
+      <%= render :partial => 'kontext_options', :collection => Kontext.root_elements, :locals => { :f => f } %>
+    </ul>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

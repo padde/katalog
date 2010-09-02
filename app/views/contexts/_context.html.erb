@@ -1,8 +1,0 @@
-<li>
-  <%= link_to context.name, context %>
-  <% if context.children.any? -%>
-    <ul>
-      <%= render 'category', :collection => context.children %>
-    </ul>
-  <% end -%>  
-</li>

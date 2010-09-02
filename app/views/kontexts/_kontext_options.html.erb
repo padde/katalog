@@ -1,0 +1,9 @@
+<li>
+  <%= f.radio_button 'parent_id', kontext_options.id %>
+  <%= kontext_options.name %>
+  <% if kontext_options.children.any? -%>
+    <ul>
+      <%= render :partial => 'kontext_options', :collection => kontext_options.children, :locals => { :f => f } %>
+    </ul>
+  <% end -%>
+</li>
