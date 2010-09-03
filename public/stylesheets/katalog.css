@@ -167,9 +167,9 @@
 .background-dark { background-color: #dddddd; }
 .paper-light { background-color: #f8f8f8; }
 .paper-fade {
-  background: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#fafafa));
-  background: -moz-linear-gradient(top, #f5f5f5, #fafafa);
-  background: linear-gradient(top, #f5f5f5, #fafafa);
+  background: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#f8f8f8));
+  background: -moz-linear-gradient(top, #f5f5f5, #f8f8f8);
+  background: linear-gradient(top, #f5f5f5, #f8f8f8);
 }
 .block-shadow {
   -moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.15);
@@ -241,7 +241,10 @@ h1 {
   margin-bottom: 0.6em;
   font-weight: bold;
 }
-h2 { font-size: 22px; }
+h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
 p { margin-bottom: 1em; }
 #wrapper {
   height: auto;
@@ -250,23 +253,10 @@ p { margin-bottom: 1em; }
   border-radius: 3px;
   overflow: hidden;
 }
-#access .user {
-  font-style: italic;
-  text-align: right;
-  font-size: 12px;
+#header {
+  margin-bottom: 14px;
+  height: 22px;
 }
-#access .user span { padding-right: 12px; }
-#access .username {
-  margin-left: 2px;
-  font-style: normal;
-  font-weight: normal;
-  letter-spacing: 1.5px;
-  text-align: center;
-  text-transform: uppercase;
-  padding-top: 3px;
-  color: #444444;
-}
-#access .user span span { padding-right: 1px; }
 #site-title {
   line-height: 30px;
   font-weight: bold;
@@ -313,8 +303,6 @@ p { margin-bottom: 1em; }
   -moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.15);
-}
-.menu-item-current {
   font-weight: bold;
   background-color: #f8f8f8;
 }
@@ -343,13 +331,11 @@ p { margin-bottom: 1em; }
   margin: 0px;
   line-height: 1.5em;
 }
-#content h2 { font-weight: bold; }
 #content table { margin-bottom: 1em; }
 #content table tr td {
   padding: 0;
   padding-right: 0.5em;
 }
-#content-side { padding-top: 46px; }
 #content .footnote {
   font-size: 0.8em;
   line-height: 1.2em;
@@ -366,7 +352,8 @@ p { margin-bottom: 1em; }
   white-space: pre;
 }
 #content img { max-width: 580px; }
-#content img[rel=fancybox] { width: auto; }
+#content img [rel=fancybox] { width: auto; }
+#content-side { padding-top: 46px; }
 input, textarea { font-size: 16px; }
 input[type=submit] {
   width: auto;
@@ -433,10 +420,6 @@ table tr td { padding: 0 10px 10px 0; }
   height: auto;
   margin-bottom: 12px;
 }
-#header {
-  margin-bottom: 14px;
-  height: 22px;
-}
 #side {
   text-align: left;
   font-size: 16px;
@@ -454,11 +437,11 @@ table tr td { padding: 0 10px 10px 0; }
   padding: 12px 24px 12px 24px;
   margin: 0;
   border-bottom: 2px solid white;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#fafafa));
-  background: -moz-linear-gradient(top, #f5f5f5, #fafafa);
-  background: linear-gradient(top, #f5f5f5, #fafafa);
+  background: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#f8f8f8));
+  background: -moz-linear-gradient(top, #f5f5f5, #f8f8f8);
+  background: linear-gradient(top, #f5f5f5, #f8f8f8);
 }
-#side li {
+#side ul li {
   text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
   letter-spacing: 0.3px;
   font-style: normal;
@@ -468,9 +451,26 @@ table tr td { padding: 0 10px 10px 0; }
   text-transform: none;
   list-style-type: square;
 }
-#side ul h4 { margin-bottom: 4px; }
-#side li a { color: #555555; }
-#side li a:hover {
+#side ul li a { color: #555555; }
+#side ul li a:hover {
   background: #ffffff;
   color: black;
+}
+#side ul h4 { margin-bottom: 4px; }
+#access .user {
+  font-style: italic;
+  text-align: right;
+  font-size: 12px;
+}
+#access .user span { padding-right: 12px; }
+#access .user span span { padding-right: 1px; }
+#access .username {
+  margin-left: 2px;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 1.5px;
+  text-align: center;
+  text-transform: uppercase;
+  padding-top: 3px;
+  color: #444444;
 }
