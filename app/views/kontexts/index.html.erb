@@ -1,12 +1,8 @@
 <h1>Kontext</h1>
 
-<% if Kontext.roots.any? -%>
 <ul>
   <%= render :partial => 'kontext', :collection => Kontext.roots %>
 </ul>
-<% else -%>
-  No Kontexts yet.
-<% end -%>
 
 <div id="controls">
 	<% if can? :create, Kontext -%>
