@@ -1,6 +1,4 @@
-<h1>
-  <%= @thing.title %>
-</h1>
+<h1><%= @thing.title %></h1>
 
 <%=format_user_text @thing.description %>
 
@@ -15,7 +13,8 @@
 <h2>Gallery</h2>
 <p>
 	<% @thing.images.each do |image| -%>
-		<%= link_to image_tag(image.data.url(:thumb), :alt => "<b>#{image.title}</b><br />#{image.description}", :rel => 'fancybox'), image.data.url(:large), :rel => 'fancybox' %>
+		<%= gallery_image_link_tag image.data.url(:thumb), image.data.url(:large),
+		  :alt => "<b>#{image.title}</b><br />#{image.description}" %>
 	<% end -%>
 </p>
 <% end -%>
