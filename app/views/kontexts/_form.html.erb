@@ -22,7 +22,7 @@
         <%= f.radio_button 'parent_id', nil %> [no Parent]
       </li>
       <%= render :partial    => 'kontext_options',
-                 :collection => Kontext.roots,
+                 :collection => Kontext.root_elements,
                  :as         => :kontext,
                  :locals     => { :f => f } %>
     </ul>

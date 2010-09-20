@@ -6,4 +6,6 @@ class Kontext < ActiveRecord::Base
   
   has_many :things, :through => :kontext_links, :source => :thing,
                     :conditions => "kontext_links.kontextable_type = 'Thing'"
+                    
+  scope :root_elements, where( :parent_id.eq % 0 )
 end
