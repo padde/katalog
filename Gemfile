@@ -32,5 +32,5 @@ gem 'RedCloth'
 # Use debugger
 gem 'ruby-debug'
 
-# Use acts_as_tree
-gem 'acts_as_tree', '>= 1.2.3', :git => 'git://github.com/parasew/acts_as_tree.git'
+# Use awesome_nested_set as replacement for acts_as_nested_set
+# gem 'awesome_nested_set' # awesome_nested_set is installed as plugin

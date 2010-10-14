@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100902175710) do
+ActiveRecord::Schema.define(:version => 20101014115115) do
 
   create_table "credits", :force => true do |t|
     t.integer  "person_id"
@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(:version => 20100902175710) do
     t.integer  "parent_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "lft"
+    t.integer  "rgt"
   end
 
   create_table "memberships", :force => true do |t|
