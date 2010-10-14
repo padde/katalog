@@ -5,7 +5,7 @@ Katalog::Application.routes.draw do |map|
   
   resources :things, :people, :groups, :kontexts
   
-  #match :identities, :to => 'people#identities'
+  match '/:id', :to => 'things#show'
   
   root :to => "things#index"
 end
