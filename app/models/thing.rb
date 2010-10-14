@@ -11,10 +11,20 @@ class Thing < ActiveRecord::Base
   has_many :kontext_links, :as => :kontextable
   has_many :kontexts, :through => :kontext_links
   
-  validates_presence_of :title, :description, :credits
+  validates_presence_of :title, :description, :credits, :dimensions_x,
+    :dimensions_unit, :kind, :materials, :license, :release_date
   validates_associated :credits, :images
   
-  attr_accessible :title, :description, :credits_attributes, :images_attributes, :kontext_ids, :license
+  attr_accessible :title, :description, :credits_attributes, :images_attributes,
+    :kontext_ids, :license, :kind, :materials, :dimensions_x, :dimensions_y,
+    :dimensions_z, :dimensions_unit, :dimensions_additional, :tools, :release_date, 
+    :start_date
+  
+  def dimensions
+    result = [dimensions_x, dimensions_y, dimensions_z].compact.join('×')
+    result += " #{dimensions_unit}" if dimensions_unit.present?
+    result if result.present?
+  end
   
   scope :asc, order('title')
 end

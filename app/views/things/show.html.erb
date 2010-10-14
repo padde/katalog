@@ -2,6 +2,25 @@
 
 <%=format_user_text @thing.description %>
 
+<h2>Form</h2>
+<p>
+  Kind: <%= @thing.kind %><br />
+  
+  Materials: <%= @thing.materials %><br />
+  
+  Dimensions: <%= @thing.dimensions %>
+  <% if @thing.dimensions_additional.present? -%>
+    (<%= @thing.dimensions_additional %>)
+  <% end -%><br />
+  
+  <% if @thing.release_date.present? -%>
+    Released on: <%= @thing.release_date.strftime '%d.%m.%Y' %><br />
+  <% end -%>
+  <% if @thing.start_date.present? -%>
+    Started at: <%= @thing.start_date.strftime '%d.%m.%Y' %><br />
+  <% end -%>
+</p>
+
 <h2>Credits</h2>
 <p>
 	<% for_unique_people @thing do |person, role| -%>
