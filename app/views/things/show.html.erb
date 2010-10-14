@@ -14,6 +14,10 @@
   <% end -%><br />
   
   <% if @thing.release_date.present? -%>
+    Tools: <%= @thing.tools %><br />
+  <% end -%>
+  
+  <% if @thing.release_date.present? -%>
     Released on: <%= @thing.release_date.strftime '%d.%m.%Y' %><br />
   <% end -%>
   <% if @thing.start_date.present? -%>
