@@ -23,8 +23,13 @@
 </p>
 <% end -%>
 
+<% if @person.institution? -%>
+<h2>This is an institution</h2>
+<p>…not a real person</p>
+<% end -%>
+
 <% if @person.user.blank? -%>
-<h2>This is a generated user</h2>
+<h2>This is a generated profile</h2>
 <p>Somebody added this person to our system, but it is not connected to a user, yet. If this should be your account, please contact us to claim it.</p>
 <% end -%>
 	

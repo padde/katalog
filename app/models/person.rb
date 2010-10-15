@@ -9,12 +9,20 @@ class Person < ActiveRecord::Base
   
   validates_presence_of :first_name, :last_name
   
-  attr_accessible :first_name, :last_name, :motto
+  attr_accessible :first_name, :last_name, :motto, :institution
   
   scope :asc, order('last_name')
   scope :by_user, lambda { |user| where( :user_id.eq % user.id ) }
   
   def full_name 
     "#{first_name} #{last_name}"
+  end
+  
+  def real?
+    ! institution
+  end
+  
+  def institution?
+    institution
   end
 end
