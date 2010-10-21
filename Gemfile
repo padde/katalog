@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'rails', '3.0.1'
 
 # Use Sqlite3 as Database
 gem 'sqlite3-ruby', :require => 'sqlite3'
