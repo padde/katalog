@@ -3,7 +3,7 @@ class ThingsController < ApplicationController
   load_and_authorize_resource
   
   def index
-    if params[:own]
+    if params[:own] && user_signed_in?
       @things = Thing.by_user(current_user).asc
     else
       @things = Thing.asc

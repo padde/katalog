@@ -27,4 +27,5 @@ class Thing < ActiveRecord::Base
   end
   
   scope :asc, order('title')
+  scope :by_user, lambda { |user| where( :user_id.eq % user.id ) }
 end
