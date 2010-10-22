@@ -2,11 +2,9 @@
 
 <% @things.each do |thing| %>
 	<p>
+		<%= thing.kind %>: 
 		<%= link_to thing.title, thing %>
-		<% unless thing.images.blank? %>
-			<br />
-			<%= link_to image_tag(thing.images.first.data.url(:thumb)), thing %>
-		<% end -%>
+
 	</p>
 <% end %>
 
