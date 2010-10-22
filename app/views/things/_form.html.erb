@@ -19,7 +19,37 @@
     <%= f.label :description %><br />
     <%= f.text_area :description %>
   </div>
-
+  
+  <div class="field">
+    <%= f.label :kind %><br />
+    <%= f.text_field :kind %>
+  </div>
+  <div class="field">
+    <%= f.label :materials %><br />
+    <%= f.text_field :materials %>
+  </div>
+  <div class="field">
+    <%= f.label :dimensions %><br />
+    <%= f.text_field :dimensions_x, :size => 3 %> ×
+    <%= f.text_field :dimensions_y, :size => 3 %> ×
+    <%= f.text_field :dimensions_z, :size => 3 %> &nbsp;
+    <%= f.text_field :dimensions_unit, :size => 3, :value => 'cm' %>
+    (for example <em>10×10×50 cm</em> or <em>15 min</em>)<br />
+    <%= f.text_field :dimensions_additional %> (additional info)
+  </div>
+  <div class="field">
+    <%= f.label :tools %><br />
+    <%= f.text_field :tools %>
+  </div>
+  <div class="field">
+    <%= f.label :release_date %><br />
+    <%= f.date_select :release_date %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br />
+    <%= f.date_select :start_date %>
+  </div>
+  
   Credits<br />
   <%= f.fields_for :credits do |builder| -%>
     <%= render 'credit_fields', :f => builder %>
@@ -44,7 +74,7 @@
   
   <div class="field">
     <%= f.label :license %><br />
-    <%= f.text_field :license %>
+    <%= f.text_field :license, :value => 'Copyright' %>
   </div>
   <div class="actions">
     <%= f.submit %>

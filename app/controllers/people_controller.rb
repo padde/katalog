@@ -29,7 +29,7 @@ class PeopleController < ApplicationController
   end
   
   def update
-    if @person.update_attributes(params[:kontext])
+    if @person.update_attributes(params[:person])
       flash[:notice] = 'Person updated.'
     end
     respond_with @person

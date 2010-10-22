@@ -28,6 +28,6 @@ module ApplicationHelper
   
   def gallery_image_link_tag ( thumb_url, image_url, options = {} )
     options = { :alt => "" }.merge(options)
-    link_to( image_tag( thumb_url, options[:alt], :rel => 'fancybox'), image_url, :rel => 'fancybox')
+    link_to( image_tag( thumb_url, :alt => options[:alt], :rel => 'fancybox'), image_url, :rel => 'fancybox')
   end
 end

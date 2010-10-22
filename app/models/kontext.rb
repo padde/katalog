@@ -1,5 +1,5 @@
 class Kontext < ActiveRecord::Base
-  acts_as_tree :order => 'name'
+  acts_as_nested_set :order => 'name'
   
   has_many :kontext_links
   has_many :kontextables, :through => :kontext_links
