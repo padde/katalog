@@ -9,3 +9,7 @@ log/*.log
 tmp/**/*
 public/system/datas/
 .gitignore
+bin/testrb-ruby-1.9.1-p378@global
+bin/testrb-ruby-1.9.1-p378
+bin/ruby-1.9.1-p378@global
+bin/
