@@ -27,7 +27,7 @@
 			</p>
 		</div>
 		
-		<div id="entry-form" class="entry-meta grid_6">
+		<div id="entry-form" class="entry-meta">
 		<h2>Form</h2>
 			
 			<p><%= @thing.kind %></p>
@@ -45,7 +45,7 @@
 		</div> <!-- end #entry-form -->
 		
 		<% if @thing.release_date.present? -%>
-		<div id="entry-time" class="entry-meta grid_6">
+		<div id="entry-time" class="entry-meta">
 			<h2>Time</h2>
 			<p>
 			    Released: <%= @thing.release_date.strftime '%d.%m.%Y' %><br />
