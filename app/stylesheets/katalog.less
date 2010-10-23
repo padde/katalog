@@ -1,26 +1,25 @@
-/* Import the grid css here so LESS will find the mixins in "apply 960 grid to layout" */
-@import url(../../public/stylesheets/960.css);
-
-
-
-
 
 /* ========================================== */
 /* = COLORS (for LESS variables and mixins) = */
 /* ========================================== */
 
-@background_dark: #ddd;
+@background_dark: #dbdbdb; /* 86% grey */
 .background-dark { background-color: @background_dark;}
 
-@paper_light: #f8f8f8;
+@paper_light: #f8f8f8; /* 97% grey */
 .paper-light { background-color: @paper_light;}
 
-@paper_medium: rgb(245,245,245);
+@paper_medium: #f6f6f6; /* 96.666% grey */
 
-@paper_dark: rgb(238,238,238);
+@paper_dark: #ebebeb; /* 92% grey */
+.paper-dark { background-color: @paper_dark;}
 
+@text-color: #333333; /* 10% black */ 
+.text-color { color: @text-color}
 
-
+@special-color: #36a4b6; /* turquoise */ 
+.text-special-color { color: @special-color;}
+.bg-special-color { background-color: @special-color;}
 
 
 /* ==================================== */
@@ -35,9 +34,9 @@
 }
 
 .block-shadow {
-	-moz-box-shadow: 0px 2px 3px rgba(0,0,0,0.15);
-	-webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.15);
-	box-shadow: 0px 2px 3px rgba(0,0,0,0.15);
+	-moz-box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+	box-shadow: 0px 2px 3px rgba(0,0,0,0.3);
 }
 
 .block-shiny {
@@ -92,84 +91,91 @@
 /* Yay! http://www.aestheticallyloyal.com/public/optimize-legibility/ */
 * {text-rendering: optimizeLegibility;} 
 
+body {
+	margin-left:auto;
+	margin-right: auto;
+	width: 960px;
+}
+
+.container_24 {float:left;}
+
 body, input, textarea {
 	font-size: 100%;
 	font-family: Vollkorn;
-	color: #333333;
+	color: @text-color;
 	background-color: @background_dark;
 	text-shadow: 1px 1px 1px rgba(255,255,255,0.75);
 	height: auto;
 }
 
-a, a:active, a:hover, a:visited {
+a, a:link, a:active, a:hover, a:visited {
 	text-decoration: underline;
-	color: black;
+	color: @text-color; /* 10% black */
+	-webkit-transition: color 0.8s ease-in;
 }
 a:active, a:hover {
-	color: black;
+	color: #36a4b6;
+	-webkit-transition: color 0s linear;
 }
 
 h1 {
-	font-size: 30px;
-	margin-bottom: 0.6em;
+	font-size: 2em;
 	font-weight: bold;
+	letter-spacing: 0.05em;
+	line-height: 1em;
+	margin-bottom: 0.625em;
+	margin-top: 0.5em;
 }
 
 h2 {
-	font-size: 22px;
-	font-weight: bold;
+	font-size: 1.375em;
+	line-height: 2.91em;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
 }
 
 p {
-	margin-bottom: 1em;
+	margin-bottom: 1.5em;
+
 }
-
-
-
-
-
-/* =========== */
-/* = WRAPPER = */
-/* =========== */
-
-#wrapper {
-	height: auto;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
-	overflow:hidden;
-}
-
-
-
 
 
 /* ========== */
 /* = HEADER = */
 /* ========== */
 
-#header {
-	margin-bottom: 14px;
-	height: 22px;
-}
+header {
+	height: 2em;
+	overflow: hidden;
 
-#site-title {
-	line-height: 30px;
-	font-weight: bold;
-	letter-spacing: 1.5px;
-	text-align: center;
-	text-transform: uppercase;
-	font-size: 18px;
-	padding-top: 3px;
-	color: #444;
-	
-	a {
-		text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
-		text-decoration: none;
+	#site-title {
+		font-size: 1.2em;
+		line-height: 1em;
+		font-weight: bold;
+		letter-spacing: 1.5px;
+		text-align: center;
+		text-transform: uppercase;
+		color: #444;
 		
-		:hover {
-			text-shadow: 1px 1px 1px rgba(255, 255, 255, 0);
-			color: black;
+		h1 {
+			line-height: 2em;
+			margin: 0;
+		}
+		
+		a {
+			text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+			text-decoration: none;
+			-webkit-transition: color 3s ease-in;
+			
+			:hover {
+				-webkit-transition: color 0.2s ease-in;
+			}
+		}
+	}
+	#user {
+		span {
+		margin-left: 0.8em;
+		margin-right: 0.8em;
 		}
 	}
 }
@@ -183,17 +189,23 @@ p {
 /* ======== */
 
 .menu {
-	font-size: 12px;
+	font-size: 0.8em;
+	line-height: 2em;
 	font-style: normal;
 	font-weight: normal;
 	text-align: left;
 	text-transform: uppercase;
-	margin-top: 9px;
+	margin-top: 0.5em;
 	vertical-align: baseline;
+	
+	ul {
+		margin:0;
+	}
 	
 	li {
 		float: left;
 		list-style-type: none;
+		margin-left: 0.2em;
 		
 		a {
 			padding-right: 9px;
@@ -201,24 +213,26 @@ p {
 			letter-spacing: 1px;
 			color: #222;
 			float:left ;
-			text-decoration: none;	
-			
-			:hover {
-				color: black;
-			}
+			text-decoration: none;
+		}
+		a:hover {
+			color: @special-color;
 		}
 	}
 }
 
+.menu-item, #user {
+	padding-bottom: 1em;
+	.block-shadow;
+	.paper-dark;
+}
+
 .menu-item-current {
-	padding-bottom: 12px;
-	margin-bottom: -12px;
+	padding-bottom: 1em;
 	.block-shadow;
 	font-weight: bold;
 	.paper-light;
 }
-
-
 
 
 
@@ -260,50 +274,64 @@ p {
 
 
 /* =========== */
-/* = CONTENT = */
+/* = PAGE = */
 /* =========== */
 
-#content {
-	padding-left: 32px;
-	padding-bottom: 46px;
-	padding-top: 32px;
-	margin: 0px;
-	line-height: 1.5em;
+#page {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	margin-bottom: 1em;
 	
-	table {
-		margin-bottom: 1em;
-	
-		tr td {
-			padding: 0;
-			padding-right: 0.5em;
+	h1, h2, h3, h4 {
+		font-family: Palatino;
+		font-weight: bold;
+	}	
+
+	div#main, div#side {
+		p {
+			text-align: justify;
+			word-wrap: break-word;
 		}
-	}
-	
-	.footnote {
-		font-size: 0.8em;
-		line-height: 1.2em;
-		margin-bottom: 0.7em;
-		color: #888;
-		
-		a {
-		  text-decoration:none;
-		}
-	}
-	
-	code {
-		font-size: 0.8em;
-		line-height: 1.5em;
-		padding: 0.5em;
-		background-color: #eee;
-		display: block;
-		white-space:pre
-	}
-	
-	img {
-		max-width: 580px;
-	
-		[rel=fancybox] {
-			width: auto;
+			
+		div {
+			margin-left: 0.8em;
+			margin-right: 0.8em;
+			margin-bottom: 0.5em;
+			
+			div {
+				margin-left: 0;
+				margin-right: 0;
+			}
+			
+			div p {
+				margin-bottom: 0.3em;
+			}
+			
+			table {
+				margin-bottom: 1em;
+			
+				tr td {
+					padding: 0;
+					padding-right: 0.5em;
+				}
+			}
+			
+			code {
+				font-size: 0.8em;
+				line-height: 1.5em;
+				padding: 0.5em;
+				background-color: #eee;
+				display: block;
+				white-space:pre
+			}
+			
+			img {
+				max-width: 580px;
+			
+				[rel=fancybox] {
+					width: auto;
+				}
+			}
 		}
 	}
 }
@@ -360,7 +388,7 @@ table tr td {
 	}
 }
 
-#main, #side, .user {
+#page, .user {
 	.paper-light;
 	.block-shadow;
 	.block-shiny;
@@ -380,53 +408,26 @@ table tr td {
 /* =========== */
 
 #side {
-	text-align: left;
-	font-size: 16px;
-	font-style: normal;
-	font-weight: normal;
-	vertical-align: baseline;
-	
-	ul {
-		text-shadow: 0px 0px 1px rgba(0,0,0,0.2);
-		font-style: normal;
-		font-weight: normal;
-		font-size: 18px;
-		text-transform: uppercase;
-		letter-spacing: 1.7px;
-		padding: 12px 24px 12px 24px;
-		margin: 0;
-		border-bottom: 2px solid white;
-		.paper-fade;
-		
-		li {
-			text-shadow: 0px 0px 0px rgba(0,0,0,0.1);
-			letter-spacing: 0.3px;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 15px;
-			list-style-position: inside;
-			text-transform: none;
-			list-style-type: square;
-			
-			a {
-				color: #555;
-				
-				:hover {
-					background: #fff;
-					color: black;
-				}
-			}
-		}
-		
-		h4 {
-			margin-bottom: 4px;
-		}
+	div {
+		margin-left: 0.8em;
+		margin-right: 0.8em;
 	}
 }
 
 
+/* ============== */
+/* = FOOTER = */
+/* ============== */
 
-
+footer {
+	.paper-light;
+	.block-shadow;
+	.block-shiny;
+	margin-bottom: 1em;
+	font-size: 0.625em;
+	letter-spacing: 0.15em;
+	text-align: center;
+}
 
 /* ============== */
 /* = LOGIN PAGE = */
