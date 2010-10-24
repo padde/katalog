@@ -201,6 +201,7 @@ header #user span {
   margin-left: 0.8em;
   margin-right: 0.8em;
 }
+header #user span span { margin: 0; }
 .menu {
   font-size: 0.8em;
   line-height: 2em;

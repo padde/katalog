@@ -90,7 +90,7 @@
 	<div id="user" class="grid_6 menu">
 		<% if user_signed_in? -%>
 			<span>Hello, <span class="username"><%= link_to current_user.username, edit_user_registration_path %>!</span>
-			<%= link_to 'Not You?', destroy_user_session_path %></span> 
+			<%= link_to 'Log out', destroy_user_session_path %></span> 
 		<% else -%>
 			<span><%= link_to 'Log in', new_user_session_path %> or
 			<%= link_to 'Register', new_user_registration_path %> </span>
