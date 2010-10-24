@@ -50,7 +50,7 @@
 			(<%= @thing.dimensions_additional %>)
 			<% end -%></p>
 			
-			<% if @thing.release_date.present? -%>
+			<% if @thing.tools.any? -%>
 			<p>Made with <%= @thing.tools %></p>
 			<% end -%>
 		</div> <!-- end #entry-form -->

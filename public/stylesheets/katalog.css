@@ -155,6 +155,25 @@ h2 {
   letter-spacing: 0.05em;
 }
 p { margin-bottom: 1.5em; }
+#site-title {
+  font-size: 1.2em;
+  line-height: 1em;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #444444;
+}
+#site-title h1 {
+  line-height: 2em;
+  margin: 0;
+}
+#site-title a {
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  -webkit-transition: all 3s ease-in;
+}
+#site-title a:hover { -webkit-transition: all 0.2s ease-in; }
 header {
   height: 2em;
   overflow: hidden;
@@ -339,6 +358,15 @@ input[type=submit] {
   -moz-transition: all 0s linear;
   -o-transition: all 0s linear;
 }
+input[type=submit]:hover {
+  background: -webkit-gradient(linear, left top, left bottom, from(#36a4b6), to(#2f8e9e));
+  background: -moz-linear-gradient(top, #36a4b6, #2f8e9e);
+  color: #f8f8f8;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+  -webkit-transition: all 0s linear;
+  -moz-transition: all 0s linear;
+  -o-transition: all 0s linear;
+}
 textarea {
   width: 500px;
   height: 200px;
@@ -445,4 +473,8 @@ footer {
   text-transform: uppercase;
   padding-top: 3px;
   color: #444444;
+}
+h1.people + p {
+  font-size: 2em;
+  line-height: 1.2em;
 }

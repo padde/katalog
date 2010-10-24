@@ -49,12 +49,27 @@
 <!--[if IE 8 ]>    <body class="ie8"> <![endif]-->
 <!--[if IE 9 ]>    <body class="ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
+<div id="sitebar" style="
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-width:230px;
+	max-width:1600px;">
+	<div style="float: left; position: relative; top: 5px;">
+		<%= image_tag 'bau_haus-sitebutton-23px.png' %>
+	</div>
+	<div style="float: right;">
+		<h1 id="site-title" class="grid_6 ">
+			<%= link_to 'Katalog', root_path %>
+		</h1>
+	</div>
+
+</div>
 
 <header class="container_24">
-
-	<h1 id="site-title" class="grid_6 ">
-		<%= link_to 'Katalog', root_path %>
-	</h1>
+<h1 id="site-title" class="grid_6 ">
+			<%= link_to 'Katalog', root_path %>
+		</h1>
 	<div id="access" role="navigation" class="grid_12 menu">
 		<ul>
 			<li class="menu-item <%= 'menu-item-current' if controller_name == 'things' %>">
