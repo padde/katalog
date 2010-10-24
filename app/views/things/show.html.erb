@@ -7,9 +7,11 @@
 		<% end -%>
 	</div>
 	
-	<h1><%= @thing.title %></h1>
-
-<%=format_user_text @thing.description %>
+	<h1 class="title"><%= @thing.title %></h1>
+	
+	<div class="description grid_12">
+		<%=format_user_text @thing.description %>
+	</div>
 
 <% if @thing.images.any? -%>
 		<h2>Media</h2>
@@ -66,5 +68,5 @@
 		</div> <!-- end #entry-time -->
 		<% end -%>
 
-	</div>	
+	</div> <!-- end #side-content -->	
 </div> <!-- end #side -->

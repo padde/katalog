@@ -160,6 +160,12 @@ a:active, a:hover {
 	.transition-fade-in;
 }
 
+::selection {
+	background-color: @special-color;
+	color: @paper-light;
+	.text-shadow-dark;
+}
+
 h1 {
 	font-size: 2em;
 	font-weight: bold;
@@ -322,7 +328,7 @@ header {
 	padding-top: 1em;
 	padding-bottom: 1em;
 	margin-bottom: 1em;
-	
+		
 	h1, h2, h3, h4 {
 		font-family: Palatino;
 		font-weight: bold;
@@ -330,9 +336,11 @@ header {
 
 	div#main, div#side {
 		
-		div.entry p {
-			text-align: justify;
-			word-wrap: break-word;
+		div.entry {
+			.description {
+				text-align: justify;
+				word-wrap: break-word;
+			}
 		}
 			
 		div {
@@ -421,8 +429,11 @@ div.entry {
 		float: right;
 		line-height: 3.8em;
 	}
-	div#controls + h1 { float:left; clear: none;}
-	
+	div#controls + h1 { 
+		float:left;
+		clear: none;
+		width: 550px;
+	}
 	div#controls + h1 + * { clear: both; }
 }
 

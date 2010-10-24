@@ -135,6 +135,11 @@ a:hover {
   -moz-transition: all 0s linear;
   -o-transition: all 0s linear;
 }
+::selection {
+  background-color: #36a4b6;
+  color: #f8f8f8;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.75);
+}
 h1 {
   font-size: 2em;
   font-weight: bold;
@@ -255,7 +260,7 @@ header #user span {
   font-family: Palatino;
   font-weight: bold;
 }
-#page div#main div.entry p {
+#page div#main div.entry .description {
   text-align: justify;
   word-wrap: break-word;
 }
@@ -284,7 +289,7 @@ header #user span {
 }
 #page div#main div img { max-width: 580px; }
 #page div#main div img [rel=fancybox] { width: auto; }
-#page div#side div.entry p {
+#page div#side div.entry .description {
   text-align: justify;
   word-wrap: break-word;
 }
@@ -385,6 +390,7 @@ div.entry div#controls {
 div.entry div#controls + h1 {
   float: left;
   clear: none;
+  width: 550px;
 }
 div.entry div#controls + h1 + * { clear: both; }
 #page, .user {
