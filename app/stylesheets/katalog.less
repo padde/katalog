@@ -89,7 +89,10 @@
 
 /* Improve text-rendering (especially kerning) */
 /* Yay! http://www.aestheticallyloyal.com/public/optimize-legibility/ */
-* {text-rendering: optimizeLegibility;} 
+* {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased; /* consolidate antialiasing between webkit-browsers (chrome, safari) */
+} 
 
 body {
 	margin-left:auto;
