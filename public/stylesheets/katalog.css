@@ -47,7 +47,10 @@
   background: -moz-linear-gradient(top, #dddddd, #eeeeee);
   background: linear-gradient(top, #dddddd, #eeeeee);
 }
-* { text-rendering: optimizeLegibility; }
+* {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
 body {
   margin-left: auto;
   margin-right: auto;
