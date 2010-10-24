@@ -18,8 +18,11 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	vertical-align: baseline;
 	background: transparent;
 }
-body {
-	line-height: 1;
+html>body {
+    font-size: 16px; /* base font size for vertical grid */
+    
+}body {
+	line-height: 1.5em;
 }
 	
 h1, h2, h3, h4, h5, h6 {
@@ -183,34 +186,3 @@ textarea {
 	-moz-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
 	-webkit-box-shadow: inset 1px 1px 1px rgba(0,0,0,0.1);
 }
-a:link {
-	color:#0066CC;
-}
-a:visited {
-	color:#743399;
-}
-a:active,
-a:hover {
-	color: #FF4B33;
-}
-
-/* Mobile Safari ( iPad, iPhone and iPod Touch )
--------------------------------------------------------------- */
-
-pre {
-	-webkit-text-size-adjust: 140%;
-}
-code {
-	-webkit-text-size-adjust: 160%;
-}
-#access,
-.entry-meta,
-.entry-utility,
-.navigation,
-.widget-area {
-	-webkit-text-size-adjust: 120%;
-}
-#site-description {
-	-webkit-text-size-adjust: none;
-}
-

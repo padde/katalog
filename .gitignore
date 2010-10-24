@@ -8,3 +8,5 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 public/system/datas/
+.gitignore
+bin/*
