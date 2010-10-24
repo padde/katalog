@@ -1,59 +1,72 @@
-<h1><%= @thing.title %></h1>
-
-<%=format_user_text @thing.description %>
-
-<h2>Form</h2>
-<p>
-  Kind: <%= @thing.kind %><br />
-  
-  Materials: <%= @thing.materials %><br />
-  
-  Dimensions: <%= @thing.dimensions %>
-  <% if @thing.dimensions_additional.present? -%>
-    (<%= @thing.dimensions_additional %>)
-  <% end -%><br />
-  
-  <% if @thing.release_date.present? -%>
-    Tools: <%= @thing.tools %><br />
-  <% end -%>
-  
-  <% if @thing.release_date.present? -%>
-    Released on: <%= @thing.release_date.strftime '%d.%m.%Y' %><br />
-  <% end -%>
-  <% if @thing.start_date.present? -%>
-    Started at: <%= @thing.start_date.strftime '%d.%m.%Y' %><br />
-  <% end -%>
-</p>
-
-<h2>Credits</h2>
-<p>
-	<% for_unique_people @thing do |person, role| -%>
-		<%= role %> — <%= link_to person.full_name, person_path(person) %><br />
-	<% end -%>
-</p>
+	<div id="controls">
+		<% if can? :update, @thing -%>
+			<%= link_to 'Edit', edit_thing_path(@thing) %>
+		<% end -%>
+		<% if can? :destroy, @thing -%>
+			<%= link_to 'Delete', @thing, :confirm => 'Are you sure?', :method => :delete %>
+		<% end -%>
+	</div>
+	
+	<h1 class="title"><%= @thing.title %></h1>
+	
+	<div class="description grid_12">
+		<%=format_user_text @thing.description %>
+	</div>
 
 <% if @thing.images.any? -%>
-<h2>Gallery</h2>
-<p>
-	<% @thing.images.each do |image| -%>
-		<%= gallery_image_link_tag image.data.url(:thumb), image.data.url(:large),
-		  :alt => "<b>#{image.title}</b><br />#{image.description}" %>
-	<% end -%>
-</p>
-<% end -%>
+		<h2>Media</h2>
+		<p>
+			<% @thing.images.each do |image| -%>
+				<%= gallery_image_link_tag image.data.url(:thumb), image.data.url(:large),
+				  :alt => "<b>#{image.title}</b><br />#{image.description}" %>
+			<% end -%>
+		</p>
+		<% end -%>
 
-<% if @thing.kontexts.any? -%>
-<h2>Kontext</h2>
-<p>
-	<%= comma_separated_links_for @thing.kontexts, :name %>
-</p>
-<% end -%>
+</div> <!-- end #entry -->
+</div> <!-- end #main -->
 
-<div id="controls">
-	<% if can? :update, @thing -%>
-		<%= link_to 'Edit', edit_thing_path(@thing) %>
-	<% end -%>
-	<% if can? :destroy, @thing -%>
-		<%= link_to 'Delete', @thing, :confirm => 'Are you sure?', :method => :delete %>
-	<% end -%>
-</div>
+<div id="side" class="grid_6">
+	<div id="side-content">
+	
+		<div id="entry-people" class="entry-meta">			
+			<h2>People</h2>
+			<p>
+				<% for_unique_people @thing do |person, role| -%>
+					<%= link_to person.full_name, person_path(person) %> – <%= role %><br />
+				<% end -%>
+			</p>
+		</div>
+		
+		<div id="entry-form" class="entry-meta">
+		<h2>Form</h2>
+			
+			<p><%= @thing.kind %></p>
+			
+			<p><%= @thing.materials %></p>
+			
+			<p><%= @thing.dimensions %>
+			<% if @thing.dimensions_additional.present? -%>
+			(<%= @thing.dimensions_additional %>)
+			<% end -%></p>
+			
+			<% if @thing.tools.any? -%>
+			<p>Made with <%= @thing.tools %></p>
+			<% end -%>
+		</div> <!-- end #entry-form -->
+		
+		<% if @thing.release_date.present? -%>
+		<div id="entry-time" class="entry-meta">
+			<h2>Time</h2>
+			<p>
+			    Released: <%= @thing.release_date.strftime '%d.%m.%Y' %><br />
+			  <% end -%>
+			  <% if @thing.start_date.present? -%>
+			    <small>Started: <%= @thing.start_date.strftime '%d.%m.%Y' %><small><br />
+			  
+			</p>
+		</div> <!-- end #entry-time -->
+		<% end -%>
+
+	</div> <!-- end #side-content -->	
+</div> <!-- end #side -->
