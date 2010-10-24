@@ -53,7 +53,7 @@ $(document).ready(function() {
   ///////////////// OEMBED /////////////////
   
   // enable oEmbed  
-  $('#content a').oembed(null, {
+  $('#page #main a').oembed(null, {
     embedMethod: "append",
     maxWidth: 580
   });
@@ -61,10 +61,10 @@ $(document).ready(function() {
   // oembed fix for safari (videos do not work,
   // original links still redirect to provider page
   // when clicking on a video to play it)
-  $('#content a[href^=http://youtube.com], ' + 
-    '#content a[href^=http://www.youtube.com], ' + 
-    '#content a[href^=http://vimeo.com], ' +
-    '#content a[href^=http://www.vimeo.com]').click(
+  $('#page #main a[href^=http://youtube.com], ' + 
+    '#page #main a[href^=http://www.youtube.com], ' + 
+    '#page #main a[href^=http://vimeo.com], ' +
+    '#page #main a[href^=http://www.vimeo.com]').click(
       function() { return false; }
   );
   
