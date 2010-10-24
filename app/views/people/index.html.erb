@@ -1,11 +1,11 @@
-<h1>People</h1>
-
-<p>
-<%= comma_separated_links_for @people, :full_name %>
-</p>
-
 <div id="controls">
 	<% if can? :create, Person -%>
 		<%= link_to 'New Person', new_person_path %>
 	<% end -%>
 </div>
+
+<h1>People</h1>
+
+<p>
+<%= comma_separated_links_for @people, :full_name %>
+</p>

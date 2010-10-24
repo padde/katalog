@@ -3,16 +3,16 @@
 /* = COLORS (for LESS variables and mixins) = */
 /* ========================================== */
 
-@background_dark: #dbdbdb; /* 86% grey */
-.background-dark { background-color: @background_dark;}
+@background-dark: #dbdbdb; /* 86% grey */
+.background-dark { background-color: @background-dark;}
 
-@paper_light: #f8f8f8; /* 97% grey */
-.paper-light { background-color: @paper_light;}
+@paper-light: #f8f8f8; /* 97% grey */
+.paper-light { background-color: @paper-light;}
 
-@paper_medium: #f6f6f6; /* 96.666% grey */
+@paper-medium: #f6f6f6; /* 96.666% grey */
 
-@paper_dark: #ebebeb; /* 92% grey */
-.paper-dark { background-color: @paper_dark;}
+@paper-dark: #ebebeb; /* 92% grey */
+.paper-dark { background-color: @paper-dark;}
 
 @text-color: #333333; /* 10% black */ 
 .text-color { color: @text-color}
@@ -21,6 +21,19 @@
 .text-special-color { color: @special-color;}
 .bg-special-color { background-color: @special-color;}
 
+@special-color-dark: #2f8e9e; /* turquoise darker (like button fading) */ 
+.text-special-color-dark { color: @special-color-dark;}
+.bg-special-color-dark { background-color: @special-color-dark;}
+
+@special-color-invert: #b64836; /* turquoise inverted = orange */ 
+.text-special-color { color: @special-color;}
+.bg-special-color { background-color: @special-color;}
+
+@special-color-invert-dark: #9e3f2f; /* turquoise inverted darker (like button fading) = orange darker */ 
+.text-special-color-dark { color: @special-color-dark;}
+.bg-special-color-dark { background-color: @special-color-dark;}
+
+
 
 /* ==================================== */
 /* = VISUAL EFFECTS (for LESS mixins) = */
@@ -28,9 +41,9 @@
 
 .paper-fade {
 	/* NOTE: webkit gradient implementation is not as per spec */
-	background:-webkit-gradient(linear, left top, left bottom, from(@paper_medium), to(@paper_light));
-	background:-moz-linear-gradient(top, @paper_medium, @paper_light);
-	background:linear-gradient(top, @paper_medium, @paper_light); /* standards version last */
+	background:-webkit-gradient(linear, left top, left bottom, from(@paper-medium), to(@paper-light));
+	background:-moz-linear-gradient(top, @paper-medium, @paper-light);
+	background:linear-gradient(top, @paper-medium, @paper-light); /* standards version last */
 }
 
 .block-shadow {
@@ -48,38 +61,64 @@
 	border-top-width: 1px;
 }
 
-.button {
-	border-width: 1px;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-	-webkit-box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
-	box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
-	/* NOTE: webkit gradient implementation is not as per spec */
-	background:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
-	background:-moz-linear-gradient(top, #fff, #eee);
-	background:linear-gradient(top, #fff, #eee); /* standards version last */
+.text-shadow-light {
+	text-shadow: 1px 1px 1px rgba(255,255,255,0.75);
 }
 
-.button-hover {
-	color: #000;
+.text-shadow-dark {
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
+}
+
+
+.transition-fade-out {
+	-webkit-transition: all 0.5s ease-in;
+	-moz-transition: all 0.5s ease-in;
+	-o-transition: all 0.5s ease-in;
+
+}
+.transition-fade-in { 
+	-webkit-transition: all 0s linear;
+	-moz-transition: all 0s linear;
+	-o-transition: all 0s linear;
+}
+
+/* new button style based on gmail */
+.button { 
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(@paper-dark));
+	background: -moz-linear-gradient(top, #fff, @paper-dark);  
+	border: 1px solid #bbb;
+	padding-bottom: 0.2em;
+	padding-left: 0.5em;
+	padding-right: 0.5em;
+	padding-top: 0.4em;
+	margin-right: 0.2em;
 	text-decoration: none;
-	background: #eee;
-	/* NOTE: webkit gradient implementation is not as per spec */
-	background:-webkit-gradient(linear, left top, left bottom, from(#eee), to(#ddd));
-	background:-moz-linear-gradient(top, #eee, #ddd);
-	background:linear-gradient(top, #eee, #ddd	); /* standards version last */
+	color: @text-color;
+	.transition-fade-in;
 }
 
-.button-active {
-	background: #ddd;
-	/* NOTE: webkit gradient implementation is not as per spec */
-	background:-webkit-gradient(linear, left top, left bottom, from(#ddd), to(#eee));
-	background:-moz-linear-gradient(top, #ddd, #eee);
-	background:linear-gradient(top, #ddd, #eee	); /* standards version last */
+.button-hover { 
+	background: -webkit-gradient(linear, left top, left bottom, from(@special-color), to(@special-color-dark));
+	background: -moz-linear-gradient(top, @special-color, @special-color-dark);  
+	color: @paper-light;
+	.text-shadow-dark;
+	.transition-fade-in;
 }
 
+.button-active { 
+	background: -webkit-gradient(linear, left top, left bottom, from(@special-color), to(@special-color-dark));
+	background: -moz-linear-gradient(top, @special-color, @special-color-dark);  
+	color: @paper-light;
+	.text-shadow-dark;
+	.transition-fade-in;
+}
 
+.button-hover-danger { 
+	background: -webkit-gradient(linear, left top, left bottom, from(@special-color-invert), to(@special-color-invert-dark));
+	background: -moz-linear-gradient(top, @special-color-invert, @special-color-invert-dark);  
+}
 
 
 
@@ -106,19 +145,19 @@ body, input, textarea {
 	font-size: 100%;
 	font-family: Vollkorn;
 	color: @text-color;
-	background-color: @background_dark;
-	text-shadow: 1px 1px 1px rgba(255,255,255,0.75);
+	background-color: @background-dark;
 	height: auto;
+	.text-shadow-light;
 }
 
 a, a:link, a:active, a:hover, a:visited {
 	text-decoration: underline;
 	color: @text-color; /* 10% black */
-	-webkit-transition: color 0.8s ease-in;
+	.transition-fade-out;
 }
 a:active, a:hover {
 	color: #36a4b6;
-	-webkit-transition: color 0s linear;
+	.transition-fade-in;
 }
 
 h1 {
@@ -168,10 +207,10 @@ header {
 		a {
 			text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
 			text-decoration: none;
-			-webkit-transition: color 3s ease-in;
+			-webkit-transition: all 3s ease-in;
 			
 			:hover {
-				-webkit-transition: color 0.2s ease-in;
+				-webkit-transition: all 0.2s ease-in;
 			}
 		}
 	}
@@ -291,7 +330,8 @@ header {
 	}	
 
 	div#main, div#side {
-		p {
+		
+		div.entry p {
 			text-align: justify;
 			word-wrap: break-word;
 		}
@@ -361,34 +401,29 @@ table tr td {
 	padding: 0 10px 10px 0;
 }
 
-#controls {
-	text-align:right;
-	
+#controls {	
 	a {
-		padding-left: 3px;
-		padding-bottom: 0px;
-		padding-right: 3px;
-		padding-top: 3px;
-		border-color: #fefffe;
-		border-style: solid;
-		color: #333;
-		text-decoration: none;
-		background: #fff;
-		margin-left: 5px;
 		.button;
 		
 		:hover {
-			color: #000;
-			text-decoration: none;
 			.button-hover;
 		}
 		
 		:active {
-			color: #000;
-			text-decoration: none;
 			.button-active;
 		}
 	}
+	a[data-method~=delete]:hover { .button-hover-danger; }
+}
+
+div.entry {
+	div#controls {
+		float: right;
+		line-height: 3.8em;
+	}
+	div#controls + h1 { float:left; clear: none;}
+	
+	div#controls + h1 + * { clear: both; }
 }
 
 #page, .user {

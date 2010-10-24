@@ -1,3 +1,12 @@
+<div id="controls">
+	<% if can? :update, @group -%>
+		<%= link_to 'Edit', edit_group_path(@group) %>
+	<% end -%>
+	<% if can? :destroy, @group -%>
+		<%= link_to 'Delete', @group, :confirm => 'Are you sure?', :method => :delete %>
+	<% end -%>
+</div>
+
 <h1><%= @group.name %></h1>
 
 <%=format_user_text @group.description %>
@@ -24,12 +33,3 @@
 	<%= link_to @group.website_url, @group.website_url, :target => '_blank' %>
 </p>
 <% end -%>
-
-<div id="controls">
-	<% if can? :update, @group -%>
-		<%= link_to 'Edit', edit_group_path(@group) %>
-	<% end -%>
-	<% if can? :destroy, @group -%>
-		<%= link_to 'Delete', @group, :confirm => 'Are you sure?', :method => :delete %>
-	<% end -%>
-</div>

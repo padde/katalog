@@ -1,3 +1,9 @@
+<div id="controls">
+	<% if can? :create, Thing -%>
+		<%= link_to 'New thing', new_thing_path %>
+	<% end -%>
+</div>
+
 <h1>Things</h1>
 
 <% @things.each do |thing| %>
@@ -8,8 +14,3 @@
 	</p>
 <% end %>
 
-<div id="controls">
-	<% if can? :create, Thing -%>
-		<%= link_to 'New thing', new_thing_path %>
-	<% end -%>
-</div>

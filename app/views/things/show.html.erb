@@ -1,3 +1,12 @@
+	<div id="controls">
+		<% if can? :update, @thing -%>
+			<%= link_to 'Edit', edit_thing_path(@thing) %>
+		<% end -%>
+		<% if can? :destroy, @thing -%>
+			<%= link_to 'Delete', @thing, :confirm => 'Are you sure?', :method => :delete %>
+		<% end -%>
+	</div>
+	
 	<h1><%= @thing.title %></h1>
 
 <%=format_user_text @thing.description %>
@@ -18,7 +27,7 @@
 <div id="side" class="grid_6">
 	<div id="side-content">
 	
-		<div id="entry-people"			
+		<div id="entry-people" class="entry-meta">			
 			<h2>People</h2>
 			<p>
 				<% for_unique_people @thing do |person, role| -%>
@@ -57,13 +66,5 @@
 		</div> <!-- end #entry-time -->
 		<% end -%>
 
-		<div id="controls">
-			<% if can? :update, @thing -%>
-				<%= link_to 'Edit', edit_thing_path(@thing) %>
-			<% end -%>
-			<% if can? :destroy, @thing -%>
-				<%= link_to 'Delete', @thing, :confirm => 'Are you sure?', :method => :delete %>
-			<% end -%>
-		</div>
 	</div>	
 </div> <!-- end #side -->
