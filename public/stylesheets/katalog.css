@@ -220,7 +220,6 @@ header #user span {
 #flash_notice, #flash_alert, #error_explanation {
   margin: 0 0 20px 0;
   padding: 10px;
-  width: 560px;
   -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
@@ -319,6 +318,21 @@ input, textarea { font-size: 16px; }
 input[type=submit] {
   width: auto;
   margin-top: 20px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ebebeb));
+  background: -moz-linear-gradient(top, #ffffff, #ebebeb);
+  border: 1px solid #bbbbbb;
+  padding-bottom: 0.2em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.4em;
+  margin-right: 0.2em;
+  text-decoration: none;
+  color: #333333;
+  -webkit-transition: all 0s linear;
+  -moz-transition: all 0s linear;
+  -o-transition: all 0s linear;
 }
 textarea {
   width: 500px;
