@@ -43,6 +43,6 @@ class ThingsController < ApplicationController
   
   def destroy
     @thing.destroy
-    redirect_to things_url
+    redirect_to things_url, :notice => 'Thing destroyed.'
   end
 end
