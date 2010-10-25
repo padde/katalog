@@ -1,4 +1,4 @@
-<div id="controls">
+<div id="controls" class="push_3">
 	<% if can? :create, Thing -%>
 		<%= link_to 'New thing', new_thing_path %>
 	<% end -%>
@@ -6,11 +6,12 @@
 
 <h1>Things</h1>
 
-<% @things.each do |thing| %>
-	<p>
-		<%= thing.kind %>: 
-		<%= link_to thing.title, thing %>
-
-	</p>
-<% end %>
-
+<div class="entry-content things-index">
+	<% @things.each do |thing| %>
+		<ul>
+			<li class="meta"><%= thing.kind %></li>
+			<li><%= link_to thing.title, thing %></li>
+	
+		</ul>
+	<% end %>
+</div>

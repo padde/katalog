@@ -68,4 +68,9 @@ $(document).ready(function() {
       function() { return false; }
   );
   
+    ///////////////// COLUMNIZE /////////////////
+
+	$('li').addClass("dontsplit");
+	$('.columnize').columnize();
+
 });

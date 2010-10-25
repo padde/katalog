@@ -171,12 +171,26 @@ p { margin-bottom: 1.5em; }
 #site-title a {
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
   text-decoration: none;
-  -webkit-transition: all 3s ease-in;
+  -webkit-transition: all 2s ease-in;
 }
 #site-title a:hover { -webkit-transition: all 0.2s ease-in; }
 header {
   height: 2em;
   overflow: hidden;
+}
+header #site-button {
+  float: left;
+  position: relative;
+  height: 23px;
+  width: 89px;
+  margin-right: 8px;
+  top: 4px;
+  background-image: url(../images/bau_haus-sitebutton-23px.png);
+}
+header #site-img { -webkit-transition: all 2s ease-out; }
+header #site-img:hover {
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-out;
 }
 header #site-title {
   font-size: 1.2em;
@@ -186,6 +200,8 @@ header #site-title {
   text-align: center;
   text-transform: uppercase;
   color: #444444;
+  float: left;
+  clear: none;
 }
 header #site-title h1 {
   line-height: 2em;
@@ -201,6 +217,7 @@ header #user span {
   margin-left: 0.8em;
   margin-right: 0.8em;
 }
+header #user span span { margin: 0; }
 .menu {
   font-size: 0.8em;
   line-height: 2em;
@@ -418,7 +435,6 @@ div.entry div#controls {
 div.entry div#controls + h1 {
   float: left;
   clear: none;
-  width: 550px;
 }
 div.entry div#controls + h1 + * { clear: both; }
 #page, .user {
@@ -475,6 +491,25 @@ footer {
   color: #444444;
 }
 h1.people + p {
-  font-size: 2em;
-  line-height: 1.2em;
+  font-size: 1.5em;
+  line-height: 1.3em;
+}
+div.things-index {
+  width: 920px;
+  height: 100%;
+  -webkit-column-count: 4;
+  -webkit-column-gap: 2em;
+  -webkit-column-rule: 1px dotted #dbdbdb;
+  font-weight: bold;
+  word-wrap: break-word;
+}
+div.things-index ul {
+  list-style: none;
+  margin-left: 0;
+}
+div.things-index .meta {
+  text-transform: uppercase;
+  font-size: 0.8em;
+  line-height: 1.25em;
+  font-weight: normal;
 }

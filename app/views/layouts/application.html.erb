@@ -50,9 +50,18 @@
 <!--[if (gt IE 9)|!(IE)]><!--> <body> <!--<![endif]-->
 
 <header class="container_24">
-<h1 id="site-title" class="grid_6 ">
+
+	<div class="grid_6">
+		<div id="site-button">
+			<a href="http://bau-ha.us/">
+			<%= image_tag 'bau_haus-sitebutton-grey-23px.png', :id=>"site-img" %>
+			</a>
+		</div>
+		<h1 id="site-title">
 			<%= link_to 'Katalog', root_path %>
 		</h1>
+	</div>
+
 	<div id="access" role="navigation" class="grid_12 menu">
 		<ul>
 			<li class="menu-item <%= 'menu-item-current' if controller_name == 'things' %>">
@@ -70,7 +79,7 @@
 	<div id="user" class="grid_6 menu">
 		<% if user_signed_in? -%>
 			<span>Hello, <span class="username"><%= link_to current_user.username, edit_user_registration_path %>!</span>
-			<%= link_to 'Not You?', destroy_user_session_path %></span> 
+			<%= link_to 'Log out', destroy_user_session_path %></span> 
 		<% else -%>
 			<span><%= link_to 'Log in', new_user_session_path %> or
 			<%= link_to 'Register', new_user_registration_path %> </span>
