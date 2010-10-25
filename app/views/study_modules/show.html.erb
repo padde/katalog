@@ -14,14 +14,14 @@
 </div>
 
 <% content_for :sidebar do -%>
-	<% if @study_module.head_of_department.present? -%>
 	<h2>Department</h2>
 	<p>
-		<%= link_to @study_module.department.name, @study_module.department %>,
+		<%= link_to @study_module.department.name, @study_module.department %>
+		<% if @study_module.head_of_department.present? -%>,
 		<%= link_to @study_module.department.head_of_department.full_name,
 			@study_module.department.head_of_department %>
+		<% end -%>
 	</p>
-	<% end -%>
 	
 	<% if @study_module.teachers.present? -%>
 	<h2>Teachers</h2>
