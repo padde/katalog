@@ -23,50 +23,51 @@
 		</p>
 		<% end -%>
 
-</div> <!-- end #entry -->
-</div> <!-- end #main -->
 
-<div id="side" class="grid_6">
-	<div id="side-content">
-	
-		<div id="entry-people" class="entry-meta">			
-			<h2>People</h2>
-			<p>
-				<% for_unique_people @thing do |person, role| -%>
-					<%= link_to person.full_name, person_path(person) %> – <%= role %><br />
-				<% end -%>
-			</p>
-		</div>
-		
-		<div id="entry-form" class="entry-meta">
-		<h2>Form</h2>
-			
-			<p><%= @thing.kind %></p>
-			
-			<p><%= @thing.materials %></p>
-			
-			<p><%= @thing.dimensions %>
-			<% if @thing.dimensions_additional.present? -%>
-			(<%= @thing.dimensions_additional %>)
-			<% end -%></p>
-			
-			<% if @thing.tools.any? -%>
-			<p>Made with <%= @thing.tools %></p>
+<% content_for :sidebar do %>
+	<div id="entry-people" class="entry-meta">			
+		<h2>People</h2>
+		<p>
+			<% for_unique_people @thing do |person, role| -%>
+				<%= link_to person.full_name, person_path(person) %> – <%= role %><br />
 			<% end -%>
-		</div> <!-- end #entry-form -->
-		
-		<% if @thing.release_date.present? -%>
-		<div id="entry-time" class="entry-meta">
-			<h2>Time</h2>
-			<p>
-			    Released: <%= @thing.release_date.strftime '%d.%m.%Y' %><br />
-			  <% end -%>
-			  <% if @thing.start_date.present? -%>
-			    <small>Started: <%= @thing.start_date.strftime '%d.%m.%Y' %><small><br />
-			  
-			</p>
-		</div> <!-- end #entry-time -->
-		<% end -%>
+		</p>
+	</div>
 
-	</div> <!-- end #side-content -->	
-</div> <!-- end #side -->
+	<div id="entry-form" class="entry-meta">
+	<h2>Form</h2>
+	
+		<p><%= @thing.kind %></p>
+	
+		<p><%= @thing.materials %></p>
+	
+		<p><%= @thing.dimensions %>
+		<% if @thing.dimensions_additional.present? -%>
+		(<%= @thing.dimensions_additional %>)
+		<% end -%></p>
+	
+		<% if @thing.tools.any? -%>
+		<p>Made with <%= @thing.tools %></p>
+		<% end -%>
+	</div> <!-- end #entry-form -->
+
+	<% if @thing.release_date.present? -%>
+	<div id="entry-time" class="entry-meta">
+		<h2>Time</h2>
+		<p>
+		    Released: <%= @thing.release_date.strftime '%d.%m.%Y' %><br />
+		  <% end -%>
+		  <% if @thing.start_date.present? -%>
+		    <small>Started: <%= @thing.start_date.strftime '%d.%m.%Y' %><small><br />
+	  
+		</p>
+	</div> <!-- end #entry-time -->
+	<% end -%>
+	
+	<% if @thing.study_modules.present? -%>
+		<h2>Study</h2>
+		<p>
+			<%= comma_separated_links_for @thing.study_modules, :name %>
+		</p>
+	<% end -%>
+<% end -%>

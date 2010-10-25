@@ -5,7 +5,11 @@ class PeopleController < ApplicationController
   respond_to :html
   
   def index
-    @people = Person.asc
+    if params[:own] && user_signed_in?
+      @people = Person.by_user(current_user).asc
+    else
+      @people = Person.asc
+    end
     respond_with @people
   end
   
