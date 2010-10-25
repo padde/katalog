@@ -24,6 +24,16 @@
     <%= f.label :kind %><br />
     <%= f.collection_select :kind, StudyModule::KINDS, :to_s, :humanize %>
   </div>
+
+  <div class="field">
+    <%= f.label :department_id %><br />
+    <%= f.collection_select :department_id, Department.asc, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :teacher_ids, "Teachers" %><br />
+    <%= f.collection_select :teacher_ids, Person.asc, :id, :full_name, { :selected => @study_module.teacher_ids }, { :multiple => true, :name => 'study_module[teacher_ids][]' } -%>
+  </div>
  
   <div class="actions">
     <%= f.submit %>

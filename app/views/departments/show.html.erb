@@ -1,0 +1,20 @@
+<div id="controls">
+	<% if can? :update, @department -%>
+		<%= link_to 'Edit', edit_department_path(@department) %>
+	<% end -%>
+	<% if can? :destroy, @department -%>
+		<%= link_to 'Delete', @department, :confirm => 'Are you sure?', :method => :delete %>
+	<% end -%>
+</div>
+
+<h1><%= @department.name %></h1>
+
+<%=format_user_text @department.description %>
+
+
+
+
+<% content_for :sidebar do -%>
+	<h2>Head of department</h2>
+	<%= @department.head_of_department.full_name %>
+<% end -%>

@@ -7,6 +7,10 @@ class Person < ActiveRecord::Base
   
   belongs_to :user
   
+  belongs_to :department
+  
+  has_and_belongs_to_many :study_modules
+  
   validates_presence_of :first_name, :last_name
   
   attr_accessible :first_name, :last_name, :motto, :institution

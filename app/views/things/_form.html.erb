@@ -55,6 +55,11 @@
     <%= render 'credit_fields', :f => builder %>
   <% end -%>
   <p><%= link_to_add_fields 'add credit', f, :credits %></p>
+
+  <div class="field">
+    <%= f.label :study_module_ids, "Study Modules" %><br />
+    <%= f.collection_select :study_module_ids, StudyModule.asc, :id, :name, { :selected => @thing.study_module_ids }, { :multiple => true, :name => 'thing[study_module_ids][]' } -%>
+  </div>
   
   Images<br />
   <%= f.fields_for :images do |builder| -%>

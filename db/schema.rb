@@ -10,12 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101024232729) do
+ActiveRecord::Schema.define(:version => 20101025030659) do
 
   create_table "credits", :force => true do |t|
     t.integer  "person_id"
     t.integer  "thing_id"
     t.string   "role"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "departments", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -73,7 +80,14 @@ ActiveRecord::Schema.define(:version => 20101024232729) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.boolean  "institution", :default => false
+    t.boolean  "institution",     :default => false
+    t.integer  "department_id"
+    t.integer  "study_module_id"
+  end
+
+  create_table "people_study_modules", :id => false, :force => true do |t|
+    t.integer "person_id"
+    t.integer "study_module_id"
   end
 
   create_table "study_modules", :force => true do |t|
@@ -84,6 +98,12 @@ ActiveRecord::Schema.define(:version => 20101024232729) do
     t.datetime "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "department_id"
+  end
+
+  create_table "study_modules_things", :id => false, :force => true do |t|
+    t.integer "thing_id"
+    t.integer "study_module_id"
   end
 
   create_table "things", :force => true do |t|

@@ -1,0 +1,11 @@
+<div id="controls">
+	<% if can? :create, Department -%>
+		<%= link_to 'New Department', new_department_path %>
+	<% end -%>
+</div>
+
+<h1>Departments</h1>
+
+<p>
+<%= comma_separated_links_for @departments, :name %>
+</p>

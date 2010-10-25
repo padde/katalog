@@ -63,4 +63,11 @@
 		</p>
 	</div> <!-- end #entry-time -->
 	<% end -%>
+	
+	<% if @thing.study_modules.present? -%>
+		<h2>Study</h2>
+		<p>
+			<%= comma_separated_links_for @thing.study_modules, :name %>
+		</p>
+	<% end -%>
 <% end -%>
