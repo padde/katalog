@@ -491,8 +491,8 @@ footer {
   color: #444444;
 }
 h1.people + p {
-  font-size: 2em;
-  line-height: 1.2em;
+  font-size: 1.5em;
+  line-height: 1.3em;
 }
 div.things-index {
   width: 920px;
