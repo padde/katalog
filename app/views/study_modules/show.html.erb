@@ -1,0 +1,14 @@
+	<div id="controls">
+		<% if can? :update, @study_module -%>
+			<%= link_to 'Edit', edit_study_module_path(@study_module) %>
+		<% end -%>
+		<% if can? :destroy, @study_module -%>
+			<%= link_to 'Delete', @study_module, :confirm => 'Are you sure?', :method => :delete %>
+		<% end -%>
+	</div>
+	
+	<h1 class="title"><%= @study_module.kind %>: <%= @study_module.name %></h1>
+	
+	<div class="description grid_12">
+		<%=format_user_text @study_module.description %>
+	</div>

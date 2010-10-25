@@ -1,0 +1,16 @@
+<div id="controls">
+	<% if can? :create, StudyModule -%>
+		<%= link_to 'New study module', new_study_module_path %>
+	<% end -%>
+</div>
+
+<h1>Study</h1>
+
+<% @study_modules.each do |study_module| %>
+	<p>
+		<%= study_module.kind %>: 
+		<%= link_to study_module.name, study_module %>
+
+	</p>
+<% end %>
+
