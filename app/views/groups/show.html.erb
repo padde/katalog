@@ -20,31 +20,26 @@
 </p>
 <% end -%>
 
-</div> <!-- end #entry -->
-</div> <!-- end #main -->
 
-<div id="side" class="grid_6">
-	<div id="side-content">
-	
-		<div id="entry-people" class="entry-meta">
 
-			<h2>Members</h2>
-			<p>
-				<% @group.people.each do |person| %>
-					<%= link_to person.full_name, person %><br />
-				<% end -%>
-			</p>
-		</div> <!-- end #entry-people -->
-		
-		<div class="entry-meta">
-			
-			<% if @group.website_url.any? -%>
-			<h2>Website</h2>
-			<p>
-				<%= link_to @group.website_url, @group.website_url, :target => '_blank' %>
-			</p>
+<% content_for :sidebar do -%>	
+	<div id="entry-people" class="entry-meta">
+
+		<h2>Members</h2>
+		<p>
+			<% @group.people.each do |person| %>
+				<%= link_to person.full_name, person %><br />
 			<% end -%>
-		</div> <!-- end .entry-meta -->
-
-	</div> <!-- end #side-content -->	
-</div> <!-- end #side -->
+		</p>
+	</div> <!-- end #entry-people -->
+	
+	<div class="entry-meta">
+		
+		<% if @group.website_url.any? -%>
+		<h2>Website</h2>
+		<p>
+			<%= link_to @group.website_url, @group.website_url, :target => '_blank' %>
+		</p>
+		<% end -%>
+	</div> <!-- end .entry-meta -->
+<% end -%>
